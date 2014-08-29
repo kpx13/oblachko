@@ -4,6 +4,7 @@
 
 {% block content %}
     <section class="scrollable wrapper w-f">
+       
         <section class="panel">
             <div class="table-responsive">
                 <table class="table table-striped m-b-none">
@@ -11,11 +12,11 @@
                         <tr>
                             <th width="20"></th>
                             <th>Наименование</th>
-                            <th>Регоион</th>
+                            <th>Регоион{%- if filters['region'] %}&nbsp;:&nbsp;<u>{{ filters['region'] }}</u>{% endif %}</th>
                             <th>Юридический Адрес</th>
                             <th>Телефон</th>
-                            <th>Отрасль</th>
-                            <th>ОKВЭД</th>
+                            <th>Отрасль{%- if filters['otrasl'] %}&nbsp;:&nbsp;<u>{{ filters['otrasl'] }}</u>{% endif %}</th>
+                            <th>ОKВЭД{%- if filters['okved'] %}&nbsp;:&nbsp;<u>{{ filters['okved'] }}</u>{% endif %}</th>
                             <th width="20"></th>
                         </tr>
                     </thead>
@@ -63,14 +64,18 @@
             <div class="modal-body">
                 <div class="form-group">
                     <label>Отрасль</label>
-                    <input type='text' class="form-control" name='otrasl' value='' placeholder='все отрасли' />
+                    <input type='text' class="form-control" name='otrasl' value='{{ filters['otrasl'] }}' placeholder='все отрасли' />
                 </div>
                 <div class="form-group">
                     <label>ОКВЭД</label>
-                    <input type='text' class="form-control" name='okved' value='' placeholder='все коды ОКВЭД' />
+                    <input type='text' class="form-control" name='okved' value='{{ filters['okved'] }}' placeholder='все коды ОКВЭД' />
                 </div>
-        <!--             {{ xsrf_form_html()|safe }} -->
-                     
+                <div class="form-group">
+                    <label>Регион</label>
+                    <input type='text' class="form-control" name='region' value='{{ filters['region'] }}' placeholder='все регионы' />
+                </div>
+                <p>Поиск идёт по частичному совпадению, т.е. по запросу "Карачаево" будет найдена "Карачаево-Черкесская республика".</p>
+                <p>Для регионов поиск будет идти так же по подкатегориям, т.е. по запросу "Сибирский федеральный округ" будет найдена и Тыва, и Бурятия и всё остальное.</p>
             </div>
             <div class="modal-footer">
                 <button type='submit' class="btn btn-sm btn-primary"><i class='fa fa-filter'></i> Фильтровать</a>

@@ -41,31 +41,32 @@ class BaseHandler(tornado.web.RequestHandler, SessionMixin):
         self.write(json.dumps(data))
 
 
+def get_filter_request(key, value):
+    if value:
+        return {key: {'$regex': ".*%s.*" % value}}
+    else:
+        return {}
 
 class ListHandler(BaseHandler):
 
     def get(self):
         start_time = time.time()
         self.page = int(self.get_argument('page', 1))
-        self.filter_dict = {}
-        """
-        self.category = self.get_argument('category', None)
-        self.tag = self.get_argument('tag', None)
-        if self.category:
-            self.filter_dict['category'] = ObjectId(self.category)
-            print 'category', self.filter_dict['category']
-        if self.tag:
-            # в списке тегов встречается данный
-            self.filter_dict['tags'] = {'$in': [self.tag]}
+        self.filters = {
+            'otrasl': self.get_argument('otrasl', ''),
+            'okved': self.get_argument('okved', ''),
+            'region': self.get_argument('region', ''),
+        }
 
-        self.context.update({'category': self.category,
-                             'tag': self.tag,
-                             'url_base': self._url})
-        """
+        self.filter_dict = {}
+        self.filter_dict.update(get_filter_request('otrasl', self.filters['otrasl']))
+        self.filter_dict.update(get_filter_request('okved', self.filters['okved']))
+        self.filter_dict.update(get_filter_request('papka', self.filters['region']))
 
         self.context.update({'title': u'Все записи в базе данных',
-                             'req_time': (time.time() - start_time) * 1000})
-        #self.search()
+                             'req_time': (time.time() - start_time) * 10000,
+                             'filters': self.filters})
+
         self.context.update(filter_list(RecordDB, self.page, self.filter_dict))
         self.render('list.html')
 
