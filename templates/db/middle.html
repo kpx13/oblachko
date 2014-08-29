@@ -1,0 +1,10 @@
+<section class="panel">
+    <section class="panel-body">
+        <dl>
+            {% for key, value in item.iteritems() %}
+                <dt>{{ key|e }}</dt>
+                <dd>{{ value|safe }}</dd>
+            {% endfor %}
+        </dl>
+    </section>
+</section>

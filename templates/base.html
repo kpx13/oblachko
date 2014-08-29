@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>{% block title %}BILLder | {{ title }}{% endblock %}</title>
+        <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
+        
+        <link rel="stylesheet" href="/static/css/bootstrap.css" type="text/css" />
+        <link rel="stylesheet" href="/static/css/animate.css" type="text/css" />
+        <link rel="stylesheet" href="/static/css/font-awesome.min.css" type="text/css" />
+        <link rel="stylesheet" href="/static/css/font.css" type="text/css" cache="false" />
+        <link rel="stylesheet" href="/static/css/plugin.css" type="text/css" />
+        <link rel="stylesheet" href="/static/css/app.css" type="text/css" />
+        
+        {% block css %}
+        {% endblock %}
+        
+        <script src="/static/js/jquery.min.js"></script>
+        <!--[if lt IE 9]>
+            <script src="/static/js/ie/respond.min.js" cache="false"></script>
+            <script src="/static/js/ie/html5.js" cache="false"></script>
+            <script src="/static/js/ie/fix.js" cache="false"></script>
+        <![endif]-->
+        
+        <link rel="stylesheet" type="text/css" href="/static/lib/pnotify/jquery.pnotify.default.css">
+        <link rel="stylesheet" type="text/css" href="/static/lib/pnotify/jquery.pnotify.default.icons.css">
+        <script src="/static/lib/pnotify/jquery.pnotify.js"></script>
+    </head>
+    
+    <body {% block bodyextend %} {% endblock %}>
+        {% block body %}
+            {% block content %}
+            {% endblock%}
+        {% endblock %}
+            
+        {% block dialogs %}
+        {% endblock %}
+        
+        <script>
+            $(document).ready(function(){
+                {% for type, text in alerts %}
+                        $.pnotify({
+                                text: '{{ text }}',
+                                type: '{{ type }}',
+
+                                sticker: false
+                            });
+                {% endfor %}
+            });
+        </script>     
+        
+        <script src="/static/js/bootstrap.js"></script>
+        <script src="/static/js/app.js"></script>
+        <script src="/static/js/app.plugin.js"></script>
+        <script src="/static/js/app.data.js"></script>
+        
+        {% block js %}
+        {% endblock %}
+        
+    </body>
+</html>

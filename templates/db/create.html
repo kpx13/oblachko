@@ -1,0 +1,19 @@
+{% extends 'db/base.html' %}
+{% from 'forms/macros.html' import render_form %}
+
+{% block content %}
+    <header class="header bg-white b-b clearfix">
+        <div class="row m-t-sm">
+            <div class="col-sm-6 m-b-xs">
+                <a href="/db/{{ module_name }}" class="btn btn-sm btn-info"><i class="fa fa-list"></i> Список</a>
+            </div>
+        </div>
+    </header>
+    <section class="scrollable wrapper">
+        <section class="panel">
+            <section class="panel-body">
+                {{ render_form(form, xsrf_form_html()) }}
+            </section>
+        </section>
+    </section>
+{% endblock %}

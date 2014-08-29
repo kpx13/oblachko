@@ -1,0 +1,45 @@
+{% extends 'db/base.html' %}
+
+{% block content %}
+    <header class="header bg-white b-b clearfix">
+        <div class="row m-t-sm">
+            <div class="col-sm-9 m-b-xs">
+                <a href="#subNav" data-toggle="class:hide" class="btn btn-sm btn-info active"><i class="fa fa-caret-right text fa fa-large"></i><i class="fa fa-caret-left text-active fa fa-large"></i></a>
+                <a href="/db/test" class="btn btn-sm btn-success"><i class="fa fa-bug"></i> Протестировать</a>
+                <a href="/db/dump" class="btn btn-sm btn-primary"><i class="fa fa-download"></i> Сделать дамп</a>
+                <a href="/db/load" class="btn btn-sm btn-warning"><i class="fa fa-upload"></i> Загрузить из дампа</a>
+                <a href="/db/reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Ресетнуть</a>
+            </div>
+            <div class="col-sm-3 m-b-xs">
+            </div>
+        </div>
+    </header>
+    <section class="scrollable wrapper">
+        <section class="panel">
+            <div class="table-responsive">
+                <table class="table table-striped m-b-none">
+                    <thead>
+                        <tr>
+                            <th width="20"><input type="checkbox"></th>
+                            <th width="20"></th>
+                            <th>Название</th>
+                            <th>Название в базе данных</th>
+                            <th>Кол-во элементов</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in items %}
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td><a href="/db/{{ i.db_name }}" ><i class="fa fa-search-plus"></i></a></td>
+                                <td><a href='/db/{{ i.db_name }}'>{{ i.name }}</a></td>
+                                <td>{{ i.db_name }}</td>
+                                <td>{{ i.count }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </section>
+{% endblock %}

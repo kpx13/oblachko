@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <section class="hbox stretch">
+        <aside class="aside-sm nav-vertical bg-success" id="nav">
+            {% include 'main_panel.html' %}
+        </aside>
+        <!-- .vbox -->
+        <section id="content">
+            <section class="hbox stretch">
+                <aside class="aside bg-white b-r" id="subNav">
+                    <section class="vbox">
+                        <section>
+                            <ul class="nav">
+                                <li class="b-b {% if module_name == 'list' %}bg-info lter{% endif %}"><a href="/db">Все базы</a></li>
+                                {% for k, v in modules_list %}
+                                    <li class="b-b {% if module_name == k %}bg-info lter{% endif %}"><a href="/db/{{ v }}">{{ k }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </section>
+                    </section>
+                </aside>
+                <aside>
+                    <section class="vbox">
+                        {% block content %}
+                        {% endblock %}
+                    </section>
+                </aside>
+            </section>      
+        </section>
+        <!-- /.vbox -->
+    </section>
+{% endblock %}

@@ -1,0 +1,21 @@
+<section class="panel">
+    <section class="panel-body">
+        <div class='row'>
+            <div class='col-lg-4'>
+                <img src='{{ item.image }}' style='max-width: 100%'/>
+            </div>
+            <div class='col-lg-8'>
+                <h2>{{ item.name }}</h2>
+                    
+                <p><i class="fa fa-calendar"></i> <span> {{ item.date_added.strftime('%d.%m.%Y %H:%m') }}</span></p>
+                
+                {% if item.source %}
+                    <p><a href='{{ item.source }}' target='_blank'><i class="fa fa-external-link"></i> <span> Ссылка на источник</span></a></p>
+                {% endif %}
+                
+                <p>{{ item.db_tc|safe }}</p>
+            </div>
+        </div>
+        
+    </section>
+</section>

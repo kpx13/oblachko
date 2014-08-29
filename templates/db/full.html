@@ -1,0 +1,25 @@
+{% extends 'db/base.html' %}
+
+{% block content %}
+    <header class="header bg-white b-b clearfix">
+        <div class="row m-t-sm">
+            <div class="col-sm-6 m-b-xs">
+                <a href="/db/{{ module_name }}" class="btn btn-sm btn-info"><i class="fa fa-list"></i> Список</a>
+                <a href="/db/{{ module_name }}/edit/{{ item._id }}" class="btn btn-sm btn-warning"><i class="fa fa-edit"></i> Редактировать</a>
+                <a href="/db/{{ module_name }}/del/{{ item._id }}" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Удалить</a>
+            </div>
+        </div>
+    </header>
+    <section class="scrollable wrapper">
+        <section class="panel">
+            <section class="panel-body">
+                <dl>
+                    {% for key, value in item.iteritems() %}
+                        <dt>{{ key|e }}</dt>
+                        <dd>{{ value|safe }}</dd>
+                    {% endfor %}
+                </dl>
+            </section>
+        </section>
+    </section>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'base_user.html' %}
+{% from 'forms/macros.html' import render_form_fields %}
+
+{% block top_panel %}
+    <h5>{{ title }}</h5>
+{% endblock %}
+
+{% block wf %}{% endblock %}
+
+{% block content %}
+    <form method="POST" role="form">
+        {{ xsrf_form_html()|safe }}
+        <section class="scrollable wrapper">           
+            <section class="panel" style='width: 800px; margin: 0 auto'>
+                <section class="panel-body">
+                    <h3>Введите реквизиты компании:</h3>
+                    {{ render_form_fields(requisites_form) }}
+                    <hr />
+                    <h4>Дополнительная информация:</h4>
+                    {{ render_form_fields(contractor_form) }}
+                </section>
+            </section>
+            
+            <section class="panel clearfix bg-primary" style='width: 800px; margin: 0 auto'>
+                <section class="panel-body">
+                    <button type='submit' class='btn btn-sm btn-success'><i class="fa fa-save"></i> Сохранить</button>
+                </section>
+            </section>
+        </section>
+    </form>
+{% endblock %}

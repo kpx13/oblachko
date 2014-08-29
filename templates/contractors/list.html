@@ -1,0 +1,59 @@
+{% extends 'base_user.html' %}
+
+{% block top_panel %}
+    <a href="/{{ module_name }}/create" class="btn btn-sm btn-success"><i class="fa fa-plus"></i> Добавить</a>
+{% endblock %}
+
+{% block content %}
+    <section class="scrollable wrapper w-f">
+        <section class="panel">
+            <div class="table-responsive">
+                <table class="table table-striped m-b-none">
+                    <thead>
+                        <tr>
+                            <th width="20"><input type="checkbox"></th>
+                            <th width="20"></th>
+                            
+                            {% for name, _ in table_cols %}
+                                <th>{{ name }}</th>
+                            {% endfor %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in items %}
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td><a href="/{{ module_name }}/full/{{ i._id }}" ><i class="fa fa-search-plus"></i></a></td>                                
+                                {% for _, value in table_cols %}
+                                    {% if i[ value ] %}
+                                        <td>
+                                            {{ i[ value ]|safe }}
+                                        </td>
+                                    {% else %}
+                                        <td>-</td>
+                                    {% endif %}
+                                {% endfor %}
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </section>
+{% endblock %}
+
+{% block footer %}
+    <footer class="footer bg-white b-t">
+        <div class="row m-t-sm text-center-xs">
+            <div class="col-sm-4">
+                Здесь будет поиск
+            </div>
+            <div class="col-sm-4 text-center">
+                <small class="text-muted inline m-t-sm m-b-sm">Показано {{ count }} из {{ count }} записей</small>
+            </div>
+            <div class="col-sm-4 text-right text-center-xs">                
+                Здесь будет пагинация
+            </div>
+        </div>
+    </footer>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base_user.html' %}
+{% from 'forms/macros.html' import render_form_fields %}
+
+{% block top_panel %}
+    <h5>{{ title }}</h5>
+{% endblock %}
+
+{% block wf %}{% endblock %}
+
+{% block content %}
+    <section class="scrollable wrapper">           
+        <section class="panel" style='width: 800px; margin: 0 auto'>
+            <section class="panel-body">
+                <h3>Реквизиты компании:</h3>
+                <dl>
+                    {% for key, value in requisites.iteritems() %}
+                        <dt>{{ key|e }}</dt>
+                        <dd>{{ value|safe }}</dd>
+                    {% endfor %}
+                </dl>
+                <h3>Дополнительная информация:</h3>
+                <dl>
+                    {% for key, value in item.iteritems() %}
+                        <dt>{{ key|e }}</dt>
+                        <dd>{{ value|safe }}</dd>
+                    {% endfor %}
+                </dl>
+            </section>
+        </section>
+        
+        <section class="panel clearfix bg-primary" style='width: 800px; margin: 0 auto'>
+            <section class="panel-body">
+                <a href="/db/{{ module_name }}" class="btn btn-sm btn-info"><i class="fa fa-list"></i> Список</a>
+                <a href="/db/{{ module_name }}/edit/{{ item._id }}" class="btn btn-sm btn-warning"><i class="fa fa-edit"></i> Редактировать</a>
+                <a href="/db/{{ module_name }}/del/{{ item._id }}" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Удалить</a>
+            </section>
+        </section>
+    </section>
+
+{% endblock %}
