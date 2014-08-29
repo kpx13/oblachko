@@ -5,7 +5,6 @@ import tornado.ioloop
 from tornado.web import StaticFileHandler
 import tornado.web
 import tornado.httpserver
-from tornado_routes import make_handlers, include
 
 from tornado.options import define
 from tornado.options import options as tornado_options_dict
@@ -18,28 +17,19 @@ tornado.options.parse_command_line()
 import settings
 URL_PREFIX = ''
 CURR_PATH = os.path.dirname(os.path.realpath(__file__))
-PERIOD = 30 # в секундах
 
-from handlers.basehandler import Home, TestBill
+from handlers.basehandler import ListHandler, DetailsHandler
 
 class Application(tornado.web.Application):
     def __init__(self):
         
         req_handlers = [
-            (r'/', Home),
-            (r'/tb', TestBill),
+            (r'/', ListHandler),
+            (r'/details/(.*)', DetailsHandler),
             (r'/static/(.*)', StaticFileHandler, {'path':  CURR_PATH + '/static'}),
             (r'/media/(.*)', StaticFileHandler, {'path': CURR_PATH + '/media'}),
             (r'/ico/(.*)', StaticFileHandler, {'path': CURR_PATH + '/static/images'}),
         ] 
-        
-        req_handlers.extend(make_handlers(URL_PREFIX,
-                (r'/account', include('handlers.account')),
-                (r'/user', include('handlers.user')),
-                (r'/db', include('handlers.db')),
-                (r'/contractors', include('handlers.contractors')),
-                (r'/bills', include('handlers.bills')),
-            ))
 
         app_env = tornado_options_dict.environment
         app_settings = settings.app_options[ app_env ]
@@ -57,8 +47,6 @@ def main():
         http_server = tornado.httpserver.HTTPServer(app, xheaders=True)
         http_server.listen(tornado_options_dict.port)
         loop = tornado.ioloop.IOLoop.instance()
-        period_cbk = tornado.ioloop.PeriodicCallback(app.period_run, 1000*PERIOD, loop)
-        period_cbk.start()
         loop.start()
     except KeyboardInterrupt:
         return

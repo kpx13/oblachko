@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="scrollable wrapper">           
+        <section class="panel" style='width: 800px; margin: 0 auto'>
+            <section class="panel-body">
+                <h3>Данные компании:</h3>
+                <dl>
+                    {% for key, value in item.iteritems() %}
+                        <dt>{{ key|e }}</dt>
+                        <dd>{{ value|safe }}</dd>
+                    {% endfor %}
+                </dl>
+            </section>
+        </section>
+        
+        <section class="panel clearfix bg-primary" style='width: 800px; margin: 0 auto'>
+            <section class="panel-body">
+                <a href="/" class="btn btn-sm btn-info"><i class="fa fa-list"></i> Список</a>
+            </section>
+        </section>
+    </section>
+
+{% endblock %}

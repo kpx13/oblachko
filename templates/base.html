@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>{% block title %}BILLder | {{ title }}{% endblock %}</title>
+        <title>{% block title %}{{ title }}{% endblock %}</title>
         <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
         
@@ -28,10 +28,13 @@
         <script src="/static/lib/pnotify/jquery.pnotify.js"></script>
     </head>
     
-    <body {% block bodyextend %} {% endblock %}>
+    <body>
         {% block body %}
-            {% block content %}
-            {% endblock%}
+                <section id="content" class="vbox">
+                    {% block content %}
+                    {% endblock %}
+                </section>
+                
         {% endblock %}
             
         {% block dialogs %}

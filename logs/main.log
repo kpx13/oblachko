@@ -1,0 +1,291 @@
+INFO         base.py                  [LINE:10][2014-08-29 15:23:57]  Работаем с базой данных evo_test.
+INFO         base.py                  [LINE:10][2014-08-29 15:27:00]  Работаем с базой данных evo_dev.
+INFO         base.py                  [LINE:10][2014-08-29 15:31:50]  Работаем с базой данных evo_dev.
+WARNING      dammit.py                [LINE:369][2014-08-29 15:31:50]  Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+WARNING      dammit.py                [LINE:369][2014-08-29 15:34:48]  Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+WARNING      dammit.py                [LINE:369][2014-08-29 15:36:34]  Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+WARNING      dammit.py                [LINE:369][2014-08-29 15:38:45]  Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+WARNING      dammit.py                [LINE:369][2014-08-29 15:39:43]  Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+WARNING      dammit.py                [LINE:369][2014-08-29 15:41:04]  Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+WARNING      dammit.py                [LINE:369][2014-08-29 15:48:36]  Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+WARNING      dammit.py                [LINE:369][2014-08-29 15:49:29]  Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+INFO         base.py                  [LINE:10][2014-08-29 15:52:23]  Работаем с базой данных evo_dev.
+INFO         base.py                  [LINE:10][2014-08-29 15:55:54]  Работаем с базой данных evo_dev.
+ERROR        web.py                   [LINE:1228][2014-08-29 16:00:10]  Uncaught exception GET / (127.0.0.1)
+HTTPRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Connection': 'keep-alive', 'Accept-Language': 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4', 'Accept-Encoding': 'gzip,deflate,sdch', 'Cookie': '_xsrf=cfa58af238304fdeb0636e0c1fff771f; sessionid=21d13d35484ed57f9ac192eba5fab18c; csrftoken=5D5XjI4YXU7qu0ghNYhaLVIv8vXX4Dlv; PYCKET_ID=ZGViOTlkZmItNjgzNS00N2QyLTgwZmQtOTRmN2M2NWE3YjU5|1409055872|c9aebc1abdb0215c844a6fd87b39b55f072bfefb', 'Host': '127.0.0.1:8000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.143 Safari/537.36'})
+Traceback (most recent call last):
+  File "/home/kpx/evomailing/oblachko/env/local/lib/python2.7/site-packages/tornado/web.py", line 1141, in _when_complete
+    callback()
+  File "/home/kpx/evomailing/oblachko/env/local/lib/python2.7/site-packages/tornado/web.py", line 1162, in _execute_method
+    self._when_complete(method(*self.path_args, **self.path_kwargs),
+  File "/home/kpx/evomailing/oblachko/handlers/basehandler.py", line 45, in get
+    self.render('list.html')
+  File "/home/kpx/evomailing/oblachko/handlers/basehandler.py", line 33, in render
+    self.write(jinja_env.get_template(template).render(self.context))
+  File "/home/kpx/evomailing/oblachko/env/local/lib/python2.7/site-packages/jinja2/environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/kpx/evomailing/oblachko/env/local/lib/python2.7/site-packages/jinja2/environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kpx/evomailing/oblachko/./templates/list.html", line 1, in top-level template code
+    {% extends 'base_user.html' %}
+  File "/home/kpx/evomailing/oblachko/env/local/lib/python2.7/site-packages/jinja2/loaders.py", line 178, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: base_user.html
+ERROR        web.py                   [LINE:1635][2014-08-29 16:00:10]  500 GET / (127.0.0.1) 33.28ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:03:23]  200 GET / (127.0.0.1) 38.83ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:03:24]  200 GET /static/css/bootstrap.css (127.0.0.1) 21.40ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:03:24]  200 GET /static/css/animate.css (127.0.0.1) 2.51ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:03:24]  200 GET /static/css/font-awesome.min.css (127.0.0.1) 1.97ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:03:24]  200 GET /static/css/font.css (127.0.0.1) 1.73ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:03:24]  200 GET /static/css/plugin.css (127.0.0.1) 1.79ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:03:24]  200 GET /static/css/app.css (127.0.0.1) 2.46ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:03:24]  200 GET /static/js/jquery.min.js (127.0.0.1) 3.36ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:03:24]  200 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 1.70ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:03:24]  200 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 1.74ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:03:24]  200 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 2.36ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:03:24]  200 GET /static/js/bootstrap.js (127.0.0.1) 2.57ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:03:24]  200 GET /static/js/app.js (127.0.0.1) 2.34ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:03:24]  200 GET /static/js/app.plugin.js (127.0.0.1) 2.24ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:03:24]  200 GET /static/js/app.data.js (127.0.0.1) 1.74ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:03:24]  200 GET /static/fonts/opensans/opensans-bold.woff (127.0.0.1) 2.16ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:03:24]  200 GET /static/fonts/opensans/opensans.woff (127.0.0.1) 2.07ms
+WARNING      web.py                   [LINE:1635][2014-08-29 16:03:25]  404 GET /favicon.ico (127.0.0.1) 1.07ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:03:45]  200 GET / (127.0.0.1) 16.46ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:03:45]  304 GET /static/css/bootstrap.css (127.0.0.1) 1.08ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:03:45]  304 GET /static/css/animate.css (127.0.0.1) 1.01ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:03:45]  304 GET /static/css/font-awesome.min.css (127.0.0.1) 1.09ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:03:45]  304 GET /static/css/font.css (127.0.0.1) 0.81ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:03:45]  304 GET /static/css/plugin.css (127.0.0.1) 0.89ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:03:45]  304 GET /static/css/app.css (127.0.0.1) 1.22ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:03:45]  304 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 1.24ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:03:45]  304 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 1.07ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:03:45]  304 GET /static/js/jquery.min.js (127.0.0.1) 0.98ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:03:45]  304 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 1.02ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:03:45]  304 GET /static/js/bootstrap.js (127.0.0.1) 1.33ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:03:45]  304 GET /static/js/app.js (127.0.0.1) 1.01ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:03:45]  304 GET /static/js/app.plugin.js (127.0.0.1) 1.11ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:03:45]  304 GET /static/js/app.data.js (127.0.0.1) 1.06ms
+INFO         base.py                  [LINE:10][2014-08-29 16:16:45]  Работаем с базой данных evo_dev.
+ERROR        web.py                   [LINE:1228][2014-08-29 16:16:51]  Uncaught exception GET / (127.0.0.1)
+HTTPRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4', 'Accept-Encoding': 'gzip,deflate,sdch', 'Host': '127.0.0.1:8000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.143 Safari/537.36', 'Connection': 'keep-alive', 'Cookie': '_xsrf=cfa58af238304fdeb0636e0c1fff771f; sessionid=21d13d35484ed57f9ac192eba5fab18c; csrftoken=5D5XjI4YXU7qu0ghNYhaLVIv8vXX4Dlv; PYCKET_ID=ZGViOTlkZmItNjgzNS00N2QyLTgwZmQtOTRmN2M2NWE3YjU5|1409055872|c9aebc1abdb0215c844a6fd87b39b55f072bfefb', 'Cache-Control': 'max-age=0'})
+Traceback (most recent call last):
+  File "/home/kpx/evomailing/oblachko/env/local/lib/python2.7/site-packages/tornado/web.py", line 1141, in _when_complete
+    callback()
+  File "/home/kpx/evomailing/oblachko/env/local/lib/python2.7/site-packages/tornado/web.py", line 1162, in _execute_method
+    self._when_complete(method(*self.path_args, **self.path_kwargs),
+  File "/home/kpx/evomailing/oblachko/handlers/basehandler.py", line 66, in get
+    self.context.update(filter_list(RecordDB, self.page, self.filter_dict))
+  File "/home/kpx/evomailing/oblachko/handlers/common.py", line 83, in filter_list
+    items = get_list(module, page, filter)
+  File "/home/kpx/evomailing/oblachko/handlers/common.py", line 13, in get_list
+    cursor = db_model.get_id_cursor(filter_dict)
+AttributeError: type object 'RecordDB' has no attribute 'get_id_cursor'
+ERROR        web.py                   [LINE:1635][2014-08-29 16:16:51]  500 GET / (127.0.0.1) 3.58ms
+INFO         base.py                  [LINE:13][2014-08-29 16:19:05]  Работаем с базой данных evo_dev.
+DEBUG        common.py                [LINE:15][2014-08-29 16:19:07]  Выбрано из БД: 0 - 21
+ERROR        web.py                   [LINE:1228][2014-08-29 16:19:09]  Uncaught exception GET / (127.0.0.1)
+HTTPRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4', 'Accept-Encoding': 'gzip,deflate,sdch', 'Host': '127.0.0.1:8000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.143 Safari/537.36', 'Connection': 'keep-alive', 'Cookie': '_xsrf=cfa58af238304fdeb0636e0c1fff771f; sessionid=21d13d35484ed57f9ac192eba5fab18c; csrftoken=5D5XjI4YXU7qu0ghNYhaLVIv8vXX4Dlv; PYCKET_ID=ZGViOTlkZmItNjgzNS00N2QyLTgwZmQtOTRmN2M2NWE3YjU5|1409055872|c9aebc1abdb0215c844a6fd87b39b55f072bfefb', 'Pragma': 'no-cache', 'Cache-Control': 'no-cache'})
+Traceback (most recent call last):
+  File "/home/kpx/evomailing/oblachko/env/local/lib/python2.7/site-packages/tornado/web.py", line 1141, in _when_complete
+    callback()
+  File "/home/kpx/evomailing/oblachko/env/local/lib/python2.7/site-packages/tornado/web.py", line 1162, in _execute_method
+    self._when_complete(method(*self.path_args, **self.path_kwargs),
+  File "/home/kpx/evomailing/oblachko/handlers/basehandler.py", line 67, in get
+    self.render(self.tmpl('list'))
+AttributeError: 'ListHandler' object has no attribute 'tmpl'
+ERROR        web.py                   [LINE:1635][2014-08-29 16:19:09]  500 GET / (127.0.0.1) 1510.48ms
+WARNING      web.py                   [LINE:1635][2014-08-29 16:19:11]  404 GET /favicon.ico (127.0.0.1) 0.95ms
+INFO         base.py                  [LINE:13][2014-08-29 16:19:30]  Работаем с базой данных evo_dev.
+DEBUG        common.py                [LINE:15][2014-08-29 16:19:31]  Выбрано из БД: 0 - 21
+INFO         web.py                   [LINE:1635][2014-08-29 16:19:33]  200 GET / (127.0.0.1) 1301.84ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:19:33]  200 GET /static/css/bootstrap.css (127.0.0.1) 9.12ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:19:33]  200 GET /static/css/animate.css (127.0.0.1) 1.69ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:19:33]  200 GET /static/css/font-awesome.min.css (127.0.0.1) 1.41ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:19:33]  200 GET /static/css/font.css (127.0.0.1) 1.87ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:19:33]  200 GET /static/css/plugin.css (127.0.0.1) 1.23ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:19:33]  200 GET /static/css/app.css (127.0.0.1) 1.55ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:19:33]  200 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 1.31ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:19:33]  200 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 1.27ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:19:33]  200 GET /static/js/jquery.min.js (127.0.0.1) 1.91ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:19:33]  200 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 1.68ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:19:33]  200 GET /static/js/bootstrap.js (127.0.0.1) 1.60ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:19:33]  200 GET /static/js/app.data.js (127.0.0.1) 3.20ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:19:33]  200 GET /static/js/app.js (127.0.0.1) 3.30ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:19:33]  200 GET /static/js/app.plugin.js (127.0.0.1) 5.86ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:19:34]  200 GET /static/fonts/opensans/opensans-bold.woff (127.0.0.1) 1.43ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:19:34]  200 GET /static/fonts/opensans/opensans.woff (127.0.0.1) 1.42ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:19:34]  200 GET /static/fonts/fontawesome-webfont.woff?v=4.0.3 (127.0.0.1) 4.15ms
+WARNING      web.py                   [LINE:1635][2014-08-29 16:19:35]  404 GET /favicon.ico (127.0.0.1) 0.96ms
+ERROR        web.py                   [LINE:1228][2014-08-29 16:19:39]  Uncaught exception GET /details/540064d93f1ac87ecced5617 (127.0.0.1)
+HTTPRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/details/540064d93f1ac87ecced5617', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4', 'Accept-Encoding': 'gzip,deflate,sdch', 'Host': '127.0.0.1:8000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.143 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://127.0.0.1:8000/', 'Cookie': '_xsrf=cfa58af238304fdeb0636e0c1fff771f; sessionid=21d13d35484ed57f9ac192eba5fab18c; csrftoken=5D5XjI4YXU7qu0ghNYhaLVIv8vXX4Dlv; PYCKET_ID=ZGViOTlkZmItNjgzNS00N2QyLTgwZmQtOTRmN2M2NWE3YjU5|1409055872|c9aebc1abdb0215c844a6fd87b39b55f072bfefb'})
+Traceback (most recent call last):
+  File "/home/kpx/evomailing/oblachko/env/local/lib/python2.7/site-packages/tornado/web.py", line 1141, in _when_complete
+    callback()
+  File "/home/kpx/evomailing/oblachko/env/local/lib/python2.7/site-packages/tornado/web.py", line 1162, in _execute_method
+    self._when_complete(method(*self.path_args, **self.path_kwargs),
+  File "/home/kpx/evomailing/oblachko/handlers/basehandler.py", line 71, in get
+    self.render('details.html')
+  File "/home/kpx/evomailing/oblachko/handlers/basehandler.py", line 34, in render
+    self.write(jinja_env.get_template(template).render(self.context))
+  File "/home/kpx/evomailing/oblachko/env/local/lib/python2.7/site-packages/jinja2/environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/kpx/evomailing/oblachko/env/local/lib/python2.7/site-packages/jinja2/environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kpx/evomailing/oblachko/./templates/details.html", line 1, in top-level template code
+    {% extends 'base.html' %}
+  File "/home/kpx/evomailing/oblachko/./templates/base.html", line 32, in top-level template code
+    {% block body %}
+  File "/home/kpx/evomailing/oblachko/./templates/base.html", line 33, in block "body"
+    {% block content %}
+  File "/home/kpx/evomailing/oblachko/./templates/details.html", line 9, in block "content"
+    {% for key, value in item.iteritems() %}
+  File "/home/kpx/evomailing/oblachko/env/local/lib/python2.7/site-packages/jinja2/environment.py", line 397, in getattr
+    return getattr(obj, attribute)
+UndefinedError: 'item' is undefined
+ERROR        web.py                   [LINE:1635][2014-08-29 16:19:39]  500 GET /details/540064d93f1ac87ecced5617 (127.0.0.1) 16.26ms
+DEBUG        common.py                [LINE:15][2014-08-29 16:22:30]  Выбрано из БД: 0 - 21
+ERROR        web.py                   [LINE:1228][2014-08-29 16:22:31]  Uncaught exception GET / (127.0.0.1)
+HTTPRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4', 'Accept-Encoding': 'gzip,deflate,sdch', 'Host': '127.0.0.1:8000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.143 Safari/537.36', 'Connection': 'keep-alive', 'Cookie': '_xsrf=cfa58af238304fdeb0636e0c1fff771f; sessionid=21d13d35484ed57f9ac192eba5fab18c; csrftoken=5D5XjI4YXU7qu0ghNYhaLVIv8vXX4Dlv; PYCKET_ID=ZGViOTlkZmItNjgzNS00N2QyLTgwZmQtOTRmN2M2NWE3YjU5|1409055872|c9aebc1abdb0215c844a6fd87b39b55f072bfefb', 'Cache-Control': 'max-age=0'})
+Traceback (most recent call last):
+  File "/home/kpx/evomailing/oblachko/env/local/lib/python2.7/site-packages/tornado/web.py", line 1141, in _when_complete
+    callback()
+  File "/home/kpx/evomailing/oblachko/env/local/lib/python2.7/site-packages/tornado/web.py", line 1162, in _execute_method
+    self._when_complete(method(*self.path_args, **self.path_kwargs),
+  File "/home/kpx/evomailing/oblachko/handlers/basehandler.py", line 67, in get
+    self.render('list.html')
+  File "/home/kpx/evomailing/oblachko/handlers/basehandler.py", line 34, in render
+    self.write(jinja_env.get_template(template).render(self.context))
+  File "/home/kpx/evomailing/oblachko/env/local/lib/python2.7/site-packages/jinja2/environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/kpx/evomailing/oblachko/env/local/lib/python2.7/site-packages/jinja2/environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kpx/evomailing/oblachko/./templates/list.html", line 1, in top-level template code
+    {% extends 'base.html' %}
+  File "/home/kpx/evomailing/oblachko/./templates/base.html", line 32, in top-level template code
+    {% block body %}
+  File "/home/kpx/evomailing/oblachko/./templates/base.html", line 34, in block "body"
+    <aside class="{{ regime['color_scheme'] }} aside-sm only-icon nav-vertical" id="nav">
+  File "/home/kpx/evomailing/oblachko/env/local/lib/python2.7/site-packages/jinja2/environment.py", line 378, in getitem
+    return obj[argument]
+UndefinedError: 'regime' is undefined
+ERROR        web.py                   [LINE:1635][2014-08-29 16:22:31]  500 GET / (127.0.0.1) 1112.42ms
+DEBUG        common.py                [LINE:15][2014-08-29 16:22:58]  Выбрано из БД: 0 - 21
+INFO         web.py                   [LINE:1635][2014-08-29 16:22:59]  200 GET / (127.0.0.1) 1176.37ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:23:00]  200 GET /static/css/bootstrap.css (127.0.0.1) 1.80ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:23:00]  200 GET /static/css/animate.css (127.0.0.1) 1.17ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:23:00]  200 GET /static/css/font-awesome.min.css (127.0.0.1) 1.15ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:23:00]  200 GET /static/css/font.css (127.0.0.1) 1.08ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:23:00]  200 GET /static/css/plugin.css (127.0.0.1) 1.15ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:23:00]  200 GET /static/css/app.css (127.0.0.1) 1.58ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:23:00]  200 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 1.50ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:23:00]  200 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 1.09ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:23:00]  200 GET /static/js/jquery.min.js (127.0.0.1) 1.20ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:23:00]  200 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 1.14ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:23:00]  200 GET /static/js/bootstrap.js (127.0.0.1) 1.19ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:23:00]  200 GET /static/js/app.js (127.0.0.1) 1.59ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:23:00]  200 GET /static/js/app.plugin.js (127.0.0.1) 1.19ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:23:00]  200 GET /static/js/app.data.js (127.0.0.1) 1.07ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:23:00]  200 GET /static/fonts/opensans/opensans.woff (127.0.0.1) 1.21ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:23:00]  200 GET /static/fonts/fontawesome-webfont.woff?v=4.0.3 (127.0.0.1) 1.39ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:23:00]  200 GET /static/fonts/opensans/opensans-bold.woff (127.0.0.1) 1.40ms
+WARNING      web.py                   [LINE:1635][2014-08-29 16:23:01]  404 GET /favicon.ico (127.0.0.1) 0.75ms
+DEBUG        common.py                [LINE:15][2014-08-29 16:25:58]  Выбрано из БД: 0 - 21
+INFO         web.py                   [LINE:1635][2014-08-29 16:26:00]  200 GET / (127.0.0.1) 1571.02ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:26:00]  200 GET /static/css/bootstrap.css (127.0.0.1) 2.21ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:26:00]  200 GET /static/css/font-awesome.min.css (127.0.0.1) 0.97ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:26:00]  200 GET /static/css/animate.css (127.0.0.1) 1.26ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:26:00]  200 GET /static/css/font.css (127.0.0.1) 5.21ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:26:00]  200 GET /static/css/plugin.css (127.0.0.1) 1.21ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:26:00]  200 GET /static/css/app.css (127.0.0.1) 1.24ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:26:00]  200 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 1.11ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:26:00]  200 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 1.08ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:26:00]  200 GET /static/js/jquery.min.js (127.0.0.1) 1.92ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:26:00]  200 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 1.18ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:26:00]  200 GET /static/js/bootstrap.js (127.0.0.1) 1.38ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:26:00]  200 GET /static/js/app.js (127.0.0.1) 1.58ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:26:00]  200 GET /static/js/app.plugin.js (127.0.0.1) 1.11ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:26:00]  200 GET /static/js/app.data.js (127.0.0.1) 1.13ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:26:00]  200 GET /static/fonts/opensans/opensans.woff (127.0.0.1) 1.64ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:26:00]  200 GET /static/fonts/fontawesome-webfont.woff?v=4.0.3 (127.0.0.1) 1.37ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:26:00]  200 GET /static/fonts/opensans/opensans-bold.woff (127.0.0.1) 1.20ms
+WARNING      web.py                   [LINE:1635][2014-08-29 16:26:02]  404 GET /favicon.ico (127.0.0.1) 0.87ms
+DEBUG        common.py                [LINE:15][2014-08-29 16:26:19]  Выбрано из БД: 0 - 21
+INFO         web.py                   [LINE:1635][2014-08-29 16:26:20]  200 GET / (127.0.0.1) 1647.54ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:26:21]  200 GET /static/css/bootstrap.css (127.0.0.1) 1.45ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:26:21]  200 GET /static/css/animate.css (127.0.0.1) 1.72ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:26:21]  200 GET /static/css/font-awesome.min.css (127.0.0.1) 1.15ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:26:21]  200 GET /static/css/font.css (127.0.0.1) 1.10ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:26:21]  200 GET /static/css/plugin.css (127.0.0.1) 1.34ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:26:21]  200 GET /static/css/app.css (127.0.0.1) 1.22ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:26:21]  200 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 1.59ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:26:21]  200 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 1.13ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:26:21]  200 GET /static/js/jquery.min.js (127.0.0.1) 1.47ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:26:21]  200 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 1.17ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:26:21]  200 GET /static/js/bootstrap.js (127.0.0.1) 1.17ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:26:21]  200 GET /static/js/app.js (127.0.0.1) 1.18ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:26:21]  200 GET /static/js/app.plugin.js (127.0.0.1) 1.20ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:26:21]  200 GET /static/js/app.data.js (127.0.0.1) 1.50ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:26:21]  200 GET /static/fonts/opensans/opensans.woff (127.0.0.1) 1.25ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:26:21]  200 GET /static/fonts/fontawesome-webfont.woff?v=4.0.3 (127.0.0.1) 1.42ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:26:21]  200 GET /static/fonts/opensans/opensans-bold.woff (127.0.0.1) 1.21ms
+WARNING      web.py                   [LINE:1635][2014-08-29 16:26:22]  404 GET /favicon.ico (127.0.0.1) 0.87ms
+DEBUG        common.py                [LINE:15][2014-08-29 16:27:56]  Выбрано из БД: 0 - 21
+INFO         web.py                   [LINE:1635][2014-08-29 16:27:57]  200 GET / (127.0.0.1) 1147.52ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:27:57]  200 GET /static/css/bootstrap.css (127.0.0.1) 1.56ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:27:57]  200 GET /static/css/plugin.css (127.0.0.1) 1.17ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:27:57]  200 GET /static/css/font-awesome.min.css (127.0.0.1) 1.51ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:27:57]  200 GET /static/css/font.css (127.0.0.1) 1.20ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:27:57]  200 GET /static/css/animate.css (127.0.0.1) 1.26ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:27:57]  200 GET /static/css/app.css (127.0.0.1) 1.61ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:27:57]  200 GET /static/js/jquery.min.js (127.0.0.1) 1.52ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:27:57]  200 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 1.43ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:27:57]  200 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 1.19ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:27:57]  200 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 1.40ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:27:57]  200 GET /static/js/bootstrap.js (127.0.0.1) 1.33ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:27:57]  200 GET /static/js/app.js (127.0.0.1) 1.67ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:27:58]  200 GET /static/js/app.plugin.js (127.0.0.1) 1.20ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:27:58]  200 GET /static/js/app.data.js (127.0.0.1) 1.18ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:27:58]  200 GET /static/fonts/opensans/opensans.woff (127.0.0.1) 1.25ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:27:58]  200 GET /static/fonts/fontawesome-webfont.woff?v=4.0.3 (127.0.0.1) 1.43ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:27:58]  200 GET /static/fonts/opensans/opensans-bold.woff (127.0.0.1) 1.23ms
+WARNING      web.py                   [LINE:1635][2014-08-29 16:27:59]  404 GET /favicon.ico (127.0.0.1) 1.02ms
+DEBUG        common.py                [LINE:15][2014-08-29 16:28:55]  Выбрано из БД: 0 - 21
+INFO         web.py                   [LINE:1635][2014-08-29 16:28:57]  200 GET / (127.0.0.1) 1046.65ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:28:57]  200 GET /static/css/bootstrap.css (127.0.0.1) 1.44ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:28:57]  200 GET /static/css/animate.css (127.0.0.1) 1.02ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:28:57]  200 GET /static/css/font-awesome.min.css (127.0.0.1) 1.14ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:28:57]  200 GET /static/css/font.css (127.0.0.1) 1.53ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:28:57]  200 GET /static/css/plugin.css (127.0.0.1) 1.82ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:28:57]  200 GET /static/css/app.css (127.0.0.1) 2.52ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:28:57]  200 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 1.92ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:28:57]  200 GET /static/js/jquery.min.js (127.0.0.1) 2.09ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:28:57]  200 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 1.03ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:28:57]  200 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 0.90ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:28:57]  200 GET /static/js/bootstrap.js (127.0.0.1) 1.54ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:28:57]  200 GET /static/js/app.js (127.0.0.1) 0.87ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:28:57]  200 GET /static/js/app.plugin.js (127.0.0.1) 0.84ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:28:57]  200 GET /static/js/app.data.js (127.0.0.1) 1.10ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:28:57]  200 GET /static/fonts/opensans/opensans.woff (127.0.0.1) 1.70ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:28:57]  200 GET /static/fonts/fontawesome-webfont.woff?v=4.0.3 (127.0.0.1) 1.21ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:28:57]  200 GET /static/fonts/opensans/opensans-bold.woff (127.0.0.1) 1.03ms
+WARNING      web.py                   [LINE:1635][2014-08-29 16:28:59]  404 GET /favicon.ico (127.0.0.1) 0.87ms
+DEBUG        common.py                [LINE:15][2014-08-29 16:29:28]  Выбрано из БД: 0 - 21
+INFO         web.py                   [LINE:1635][2014-08-29 16:29:30]  200 GET / (127.0.0.1) 1075.33ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:29:30]  200 GET /static/css/bootstrap.css (127.0.0.1) 1.49ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:29:30]  200 GET /static/css/animate.css (127.0.0.1) 1.28ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:29:30]  200 GET /static/css/font-awesome.min.css (127.0.0.1) 0.94ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:29:30]  200 GET /static/css/font.css (127.0.0.1) 0.85ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:29:30]  200 GET /static/css/plugin.css (127.0.0.1) 0.91ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:29:30]  200 GET /static/css/app.css (127.0.0.1) 0.94ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:29:30]  200 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 0.96ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:29:30]  200 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 2.48ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:29:30]  200 GET /static/js/bootstrap.js (127.0.0.1) 1.23ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:29:30]  200 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 1.19ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:29:30]  200 GET /static/js/jquery.min.js (127.0.0.1) 1.32ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:29:30]  200 GET /static/js/app.js (127.0.0.1) 3.12ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:29:30]  200 GET /static/js/app.plugin.js (127.0.0.1) 2.59ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:29:30]  200 GET /static/js/app.data.js (127.0.0.1) 1.87ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:29:30]  200 GET /static/fonts/opensans/opensans-bold.woff (127.0.0.1) 1.26ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:29:30]  200 GET /static/fonts/opensans/opensans.woff (127.0.0.1) 1.17ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:29:30]  200 GET /static/fonts/fontawesome-webfont.woff?v=4.0.3 (127.0.0.1) 1.27ms
+WARNING      web.py                   [LINE:1635][2014-08-29 16:29:31]  404 GET /favicon.ico (127.0.0.1) 0.85ms
