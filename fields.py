@@ -30,5 +30,8 @@ list_fields = [
 #for l in list_fields:
 #    print u"\t'%s': unicode," % pytils.translit.slugify(l)
 
+#for l in list_fields:
+#    print u"\t'%s': record_raw[]," % pytils.translit.slugify(l)
+
 for l in list_fields:
-    print u"\t'%s': record_raw[]," % pytils.translit.slugify(l)
+    print "<dt>%s: </dt><dd>{{ item['%s'] }}</dd>" % (l, pytils.translit.slugify(l))

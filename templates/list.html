@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% from 'macros.html' import render_pagination, dialog %}
+
 {% block content %}
     <section class="scrollable wrapper w-f">
         <section class="panel">
@@ -7,19 +9,27 @@
                 <table class="table table-striped m-b-none">
                     <thead>
                         <tr>
-                            <th width="20"><input type="checkbox"></th>
                             <th width="20"></th>
                             <th>Наименование</th>
-                            <th>Наименование</th>
-                            <th>Наименование</th>
+                            <th>Регоион</th>
+                            <th>Юридический Адрес</th>
+                            <th>Телефон</th>
+                            <th>Отрасль</th>
+                            <th>ОKВЭД</th>
+                            <th width="20"></th>
                         </tr>
                     </thead>
                     <tbody>
                         {% for i in items %}
                             <tr>
-                                <td><input type="checkbox"></td>
-                                <td><a href="/details/{{ i._id }}" ><i class="fa fa-search-plus"></i></a></td>                                
-                                <td>{{ i['naimenovanie'] }}</td>
+                                <td><a href="/details/{{ i._id }}" ><i class="fa fa-search-plus"></i></a></td>
+                                <td>{{ i['kratkoe-naimenovanie'] }}</td>
+                                <td>{{ i['region'] }}</td>
+                                <td>{{ i['yuridicheskij-adres'] }}</td>
+                                <td>{{ i['telefon'] }}</td>
+                                <td>{{ i['otrasl'] }}</td>
+                                <td>{{ i['okved'] }}</td>
+                                <td><a href="/details/{{ i._id }}" ><i class="fa fa-search-plus"></i></a></td>
                             </tr>
                         {% endfor %}
                     </tbody>
@@ -28,21 +38,44 @@
         </section>
     </section>
     
-    <footer class="footer bg-white b-t">
+    <footer class="footer bg-primary lter b-t">
         <div class="row m-t-sm text-center-xs">
-            <div class="col-sm-4">
-                Здесь будет поиск
+            <div class="col-sm-3">
+                <a data-toggle="modal" href="#filter_btn" class="btn btn-sm"><i class='fa fa-filter'></i> Фильтровать</a>
             </div>
-            <div class="col-sm-4 text-center">
-                <small class="text-muted inline m-t-sm m-b-sm">Показано {{ count }} из {{ count_all }} записей</small>
+            <div class="col-sm-6">
+                <ul class="pagination pagination-sm m-t-none m-b-none"  style='width: 100%;'>
+                    {{ render_pagination(pagination, uri) }}
+                </ul>
             </div>
-            <div class="col-sm-4 text-right text-center-xs">                
-                Здесь будет пагинация
+            <div class="col-sm-3 text-right">
+                {{ count }} из {{ count_all }} записей<br />
+                Время обработки запроса: {{ req_time|round(3, 'floor') }} сек.
             </div>
+            
         </div>
     </footer>
 {% endblock %}
 
-{% block footer %}
-    
+{% block dialogs %}
+    {% call dialog('Фильтровать', 'filter_btn') %}
+        <form method='GET'>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Отрасль</label>
+                    <input type='text' class="form-control" name='otrasl' value='' placeholder='все отрасли' />
+                </div>
+                <div class="form-group">
+                    <label>ОКВЭД</label>
+                    <input type='text' class="form-control" name='okved' value='' placeholder='все коды ОКВЭД' />
+                </div>
+        <!--             {{ xsrf_form_html()|safe }} -->
+                     
+            </div>
+            <div class="modal-footer">
+                <button type='submit' class="btn btn-sm btn-primary"><i class='fa fa-filter'></i> Фильтровать</a>
+                <button type="button" class="btn btn-default btn-sm" data-dismiss="modal"><i class='fa fa-times'></i> Закрыть</button>
+            </div>
+        </form>
+    {% endcall %}
 {% endblock %}

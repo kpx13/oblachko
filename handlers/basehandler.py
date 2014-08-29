@@ -6,6 +6,7 @@ from pycket.session import SessionMixin
 from settings import jinja_env
 from common import filter_list
 from models.record import RecordDB
+import time
 
 def authorized(method):
     """ Декоратор, проверяющий, авторизован юзер или нет """
@@ -44,6 +45,7 @@ class BaseHandler(tornado.web.RequestHandler, SessionMixin):
 class ListHandler(BaseHandler):
 
     def get(self):
+        start_time = time.time()
         self.page = int(self.get_argument('page', 1))
         self.filter_dict = {}
         """
@@ -61,11 +63,17 @@ class ListHandler(BaseHandler):
                              'url_base': self._url})
         """
 
-        self.context.update({'title': u'Все записи.'})
+        self.context.update({'title': u'Все записи в базе данных',
+                             'req_time': (time.time() - start_time) * 1000})
         #self.search()
         self.context.update(filter_list(RecordDB, self.page, self.filter_dict))
         self.render('list.html')
 
 class DetailsHandler(BaseHandler):
     def get(self, record_id):
+        item = RecordDB.get_full(record_id)
+        self.context.update({
+            'title': item['polnoe-naimenovanie'],
+            'item': item
+        })
         self.render('details.html')

@@ -6,7 +6,7 @@ import urlparse
 import urllib
 #from sphinxsearch import SphinxClient, SPH_MATCH_EXTENDED
 
-PER_PAGE = 21
+PER_PAGE = 50
 
 def get_list(db_model, page_num, filter_dict={}):
     "Возращает отпагинированный список для модели db_model и страницы page_num"

@@ -1,0 +1,134 @@
+{# В этом модуле находятся основные макросы, подключаемые в base.html #}
+
+{# Типы бывают: info, error, success #}
+{# Пример: {{ notify('title', 'I have an additional class that\'s used to give me special styling. I always wanted to be pretty. I also use the nonblock module.', 'info', 'fa fa-dashboard fa-3x') }} #}
+
+{% macro notify(title, text, type='', icon='fa fa-bell-o fa-2x') -%}
+    $.pnotify({
+        title: '{{ title }}',
+        text: '{{ text }}',
+        icon: '{{ icon }}',
+        type: '{{ type }}',
+        sticker: false
+    });
+{%- endmacro %}
+
+
+{% macro dinfo(text) -%}
+    <section class="panel bg-success dk">
+        <div class='panel-body'>
+            <p>
+                <i class='fa fa-bug pill-right'> </i>
+                {{ caller() }}
+            </p>
+        </div>
+    </section>
+{%- endmacro %}
+
+{% macro dialog(title, id, content='') -%}
+    {# контент может подгружаться из ajax, это делается отдельно #}
+    <div class="modal fade" id='{{ id }}' tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">{{ title }}</h4>
+                </div>
+                
+                    {% if caller %}
+                        {{ caller() }}
+                    {% else %}
+                        {{ content|safe }}
+                    {% endif %}
+                
+            </div>
+        </div>
+    </div>
+{%- endmacro %}
+
+{% macro simple_dialog(modal_id, callback='', content='') -%}
+    <div class="modal fade" id='{{ modal_id }}' tabindex="-1" role="dialog" aria-hidden="true" style='z-index: 16'>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <p class="modal-title">&nbsp;</p>
+                </div>
+                <div class="modal-body">
+                    {{ content|safe }}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-white btn-sm" data-dismiss="modal"><i class="fa fa-times"> </i> Нет</button>
+                    <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal" onclick="{{ callback|safe }}" id='{{ modal_id }}Yes'><i class="fa fa-check"> </i> Да</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{%- endmacro %}
+
+{% macro render_pagination(pagination, uri) %}
+    {% if pagination.pages > 1 %}
+        {% if pagination.has_prev %}
+            <li><a href="{{ url_for_other_page(uri, pagination.page - 1) }}"><i class="fa fa-chevron-left"></i></a></li>
+        {% endif %}
+        {%- for page in pagination.iter_pages() %}
+            {% if page %}
+                {% if page != pagination.page %}
+                    <li><a href="{{ url_for_other_page(uri, page) }}">{{ page }}</a></li>
+                {% else %}
+                    <li><a><b>{{ page }}</b></a></li>
+                {% endif %}
+            {% else %}
+                <li><a>..</a>.</li>
+            {% endif %}
+        {%- endfor %}
+        {% if pagination.has_next %}
+            <li><a href="{{ url_for_other_page(uri, pagination.page + 1) }}"><i class="fa fa-chevron-right"></i></a></li>
+        {% endif %}
+    {% endif %}
+{% endmacro %}
+
+{% macro render_progress(progress) %}
+    <div class="progress progress-sm progress-striped m-t-xs m-b-none">
+        {% if not progress or progress < 10 %}
+            <div class="progress-bar progress-bar-danger" data-toggle="tooltip" data-original-title="{{ progress }}%" style="width: {{ progress }}%"></div>
+        {% elif not progress or progress < 50 %}
+            <div class="progress-bar progress-bar-warning" data-toggle="tooltip" data-original-title="{{ progress }}%" style="width: {{ progress }}%"></div>
+        {% elif not progress or progress < 100 %}
+            <div class="progress-bar progress-bar-info" data-toggle="tooltip" data-original-title="{{ progress }}%" style="width: {{ progress }}%"></div>
+        {% else %}
+            <div class="progress-bar progress-bar-success" data-toggle="tooltip" data-original-title="{{ progress }}%" style="width: {{ progress }}%"></div>
+        {% endif %}
+    </div>
+{% endmacro %}
+
+{% macro render_email_send_form (form, xsrf_token, post_id) -%}
+    <form method="POST" role="form" class="{{ class_ }}">
+        {{ xsrf_token|safe }}
+        <input type='hidden' name='post' value='{{ post_id }}'>
+        <input type='hidden' name='action' value='email_send'>
+        {{ form.email(id = post_id ~ "_email", placeholder='Email') }}    <br />
+        <button type="submit" class="btn btn-info btn-xs"><i class="fa fa-save"> </i> Готово</button>
+    </form>
+{%- endmacro %}
+
+{% macro render_short_user (user, date_post='') -%}
+    <div class="clearfix m-b">
+        {% if date_post %}
+            <small class="text-muted pull-right">{{ date(date_post) }}</small>
+        {% endif %}
+        <a href="/user/{{ user._id }}" class="thumb-sm pull-left m-r" target='_blank'>
+            {% if user.avatar %}
+                <img src="{{ user.avatar }}" class="img-circle">
+            {% else %}
+                <img src="/static/images/avatar_default.jpg" class="img-circle">
+            {% endif %}
+        </a>
+        <div class="clear">
+            <a href="/user/{{ user._id }}"><strong>{{ user.name }}</strong></a>
+            {% if user.career %}
+                <small class="block text-muted">{{ user.career }}</small>
+            {% endif %}
+        </div>
+    </div>
+{%- endmacro %}

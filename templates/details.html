@@ -1,24 +1,43 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <section class="scrollable wrapper">           
+    <section class="scrollable wrapper">       
+        <section class="panel clearfix bg-primary" style='width: 800px; margin: 0 auto'>
+            <section class="panel-body">
+                <a href="/" class="btn btn-sm"><i class="fa fa-angle-double-left"></i> Назад к списку</a>
+            </section>
+        </section>
         <section class="panel" style='width: 800px; margin: 0 auto'>
             <section class="panel-body">
-                <h3>Данные компании:</h3>
+                <h2>{{ item['polnoe-naimenovanie'] }}</h2>
                 <dl>
-                    {% for key, value in item.iteritems() %}
-                        <dt>{{ key|e }}</dt>
-                        <dd>{{ value|safe }}</dd>
-                    {% endfor %}
+                    <dt>Наименование: </dt><dd>{{ item['naimenovanie'] }}</dd>
+                    <dt>Полное наименование: </dt><dd>{{ item['polnoe-naimenovanie'] }}</dd>
+                    <dt>Краткое наименование: </dt><dd>{{ item['kratkoe-naimenovanie'] }}</dd>
+                    <dt>Руководитель: </dt><dd>{{ item['rukovoditel'] }}</dd>
+                    <dt>Должность руководителя: </dt><dd>{{ item['dolzhnost-rukovoditelya'] }}</dd>
+                    <dt>Дата регистрации: </dt><dd>{{ item['data-registratsii'] }}</dd>
+                    <dt>Регион: </dt><dd>{{ item['region'] }}</dd>
+                    <dt>Юридический Адрес: </dt><dd>{{ item['yuridicheskij-adres'] }}</dd>
+                    <dt>Фактический адрес: </dt><dd>{{ item['fakticheskij-adres'] }}</dd>
+                    <dt>Телефон: </dt><dd>{{ item['telefon'] }}</dd>
+                    <dt>Веб-сайт: </dt><dd>{{ item['veb-sajt'] }}</dd>
+                    <dt>E-mail: </dt><dd>{{ item['e-mail'] }}</dd>
+                    <dt>ОКАТО: </dt><dd>{{ item['okato'] }}</dd>
+                    <dt>Отрасль: </dt><dd>{{ item['otrasl'] }}</dd>
+                    <dt>ОKВЭД: </dt><dd>{{ item['okved'] }}</dd>
+                    <dt>ОКПО: </dt><dd>{{ item['okpo'] }}</dd>
+                    <dt>ИНН: </dt><dd>{{ item['inn'] }}</dd>
+                    <dt>ОГРН: </dt><dd>{{ item['ogrn'] }}</dd>
+                    <dt>КПП: </dt><dd>{{ item['kpp'] }}</dd>
+                    <hr />
+                    <dt>Папка: </dt><dd>{{ item['papka'] }}</dd>
+                    <dt>Файл: </dt><dd>{{ item['fajl'] }}</dd>
                 </dl>
             </section>
         </section>
         
-        <section class="panel clearfix bg-primary" style='width: 800px; margin: 0 auto'>
-            <section class="panel-body">
-                <a href="/" class="btn btn-sm btn-info"><i class="fa fa-list"></i> Список</a>
-            </section>
-        </section>
+        
     </section>
 
 {% endblock %}

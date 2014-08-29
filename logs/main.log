@@ -289,3 +289,1024 @@ INFO         web.py                   [LINE:1635][2014-08-29 16:29:30]  200 GET 
 INFO         web.py                   [LINE:1635][2014-08-29 16:29:30]  200 GET /static/fonts/opensans/opensans.woff (127.0.0.1) 1.17ms
 INFO         web.py                   [LINE:1635][2014-08-29 16:29:30]  200 GET /static/fonts/fontawesome-webfont.woff?v=4.0.3 (127.0.0.1) 1.27ms
 WARNING      web.py                   [LINE:1635][2014-08-29 16:29:31]  404 GET /favicon.ico (127.0.0.1) 0.85ms
+ERROR        web.py                   [LINE:1228][2014-08-29 16:30:43]  Uncaught exception GET /details/540064d93f1ac87ecced5611 (127.0.0.1)
+HTTPRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/details/540064d93f1ac87ecced5611', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4', 'Accept-Encoding': 'gzip,deflate,sdch', 'Host': '127.0.0.1:8000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.143 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://127.0.0.1:8000/', 'Cookie': '_xsrf=cfa58af238304fdeb0636e0c1fff771f; sessionid=21d13d35484ed57f9ac192eba5fab18c; csrftoken=5D5XjI4YXU7qu0ghNYhaLVIv8vXX4Dlv; PYCKET_ID=ZGViOTlkZmItNjgzNS00N2QyLTgwZmQtOTRmN2M2NWE3YjU5|1409055872|c9aebc1abdb0215c844a6fd87b39b55f072bfefb'})
+Traceback (most recent call last):
+  File "/home/kpx/evomailing/oblachko/env/local/lib/python2.7/site-packages/tornado/web.py", line 1141, in _when_complete
+    callback()
+  File "/home/kpx/evomailing/oblachko/env/local/lib/python2.7/site-packages/tornado/web.py", line 1162, in _execute_method
+    self._when_complete(method(*self.path_args, **self.path_kwargs),
+  File "/home/kpx/evomailing/oblachko/handlers/basehandler.py", line 71, in get
+    self.render('details.html')
+  File "/home/kpx/evomailing/oblachko/handlers/basehandler.py", line 34, in render
+    self.write(jinja_env.get_template(template).render(self.context))
+  File "/home/kpx/evomailing/oblachko/env/local/lib/python2.7/site-packages/jinja2/environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/kpx/evomailing/oblachko/env/local/lib/python2.7/site-packages/jinja2/environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kpx/evomailing/oblachko/./templates/details.html", line 1, in top-level template code
+    {% extends 'base.html' %}
+  File "/home/kpx/evomailing/oblachko/./templates/base.html", line 32, in top-level template code
+    {% block body %}
+  File "/home/kpx/evomailing/oblachko/./templates/base.html", line 34, in block "body"
+    {% block content %}
+  File "/home/kpx/evomailing/oblachko/./templates/details.html", line 9, in block "content"
+    {% for key, value in item.iteritems() %}
+  File "/home/kpx/evomailing/oblachko/env/local/lib/python2.7/site-packages/jinja2/environment.py", line 397, in getattr
+    return getattr(obj, attribute)
+UndefinedError: 'item' is undefined
+ERROR        web.py                   [LINE:1635][2014-08-29 16:30:43]  500 GET /details/540064d93f1ac87ecced5611 (127.0.0.1) 3.90ms
+INFO         base.py                  [LINE:13][2014-08-29 16:35:01]  Работаем с базой данных evo_dev.
+DEBUG        common.py                [LINE:15][2014-08-29 16:35:05]  Выбрано из БД: 0 - 21
+INFO         web.py                   [LINE:1635][2014-08-29 16:35:06]  200 GET / (127.0.0.1) 1269.95ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:35:07]  304 GET /static/css/bootstrap.css (127.0.0.1) 10.14ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:35:07]  304 GET /static/css/app.css (127.0.0.1) 1.85ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:35:07]  304 GET /static/css/animate.css (127.0.0.1) 1.56ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:35:07]  304 GET /static/css/font-awesome.min.css (127.0.0.1) 2.05ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:35:07]  304 GET /static/css/font.css (127.0.0.1) 1.70ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:35:07]  304 GET /static/css/plugin.css (127.0.0.1) 1.31ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:35:07]  304 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 1.13ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:35:07]  304 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 1.23ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:35:07]  304 GET /static/js/jquery.min.js (127.0.0.1) 1.61ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:35:07]  304 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 1.30ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:35:07]  304 GET /static/js/bootstrap.js (127.0.0.1) 1.39ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:35:07]  304 GET /static/js/app.js (127.0.0.1) 1.19ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:35:07]  304 GET /static/js/app.data.js (127.0.0.1) 1.17ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:35:07]  304 GET /static/js/app.plugin.js (127.0.0.1) 1.18ms
+DEBUG        common.py                [LINE:15][2014-08-29 16:36:01]  Выбрано из БД: 0 - 21
+INFO         web.py                   [LINE:1635][2014-08-29 16:36:03]  200 GET / (127.0.0.1) 1560.84ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:36:03]  304 GET /static/css/bootstrap.css (127.0.0.1) 1.06ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:36:03]  304 GET /static/css/font.css (127.0.0.1) 0.98ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:36:03]  304 GET /static/css/font-awesome.min.css (127.0.0.1) 1.42ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:36:03]  304 GET /static/css/animate.css (127.0.0.1) 1.12ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:36:03]  304 GET /static/css/plugin.css (127.0.0.1) 1.73ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:36:03]  304 GET /static/css/app.css (127.0.0.1) 1.05ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:36:03]  304 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 1.14ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:36:03]  304 GET /static/js/jquery.min.js (127.0.0.1) 0.93ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:36:03]  304 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 0.98ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:36:03]  304 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 1.27ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:36:03]  304 GET /static/js/app.data.js (127.0.0.1) 1.74ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:36:03]  304 GET /static/js/app.plugin.js (127.0.0.1) 1.36ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:36:03]  304 GET /static/js/app.js (127.0.0.1) 1.22ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:36:03]  304 GET /static/js/bootstrap.js (127.0.0.1) 1.04ms
+ERROR        web.py                   [LINE:1228][2014-08-29 16:36:50]  Uncaught exception GET /details/540064d93f1ac87ecced560e (127.0.0.1)
+HTTPRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/details/540064d93f1ac87ecced560e', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4', 'Accept-Encoding': 'gzip,deflate,sdch', 'Host': '127.0.0.1:8000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.143 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://127.0.0.1:8000/', 'Cookie': '_xsrf=cfa58af238304fdeb0636e0c1fff771f; sessionid=21d13d35484ed57f9ac192eba5fab18c; csrftoken=5D5XjI4YXU7qu0ghNYhaLVIv8vXX4Dlv; PYCKET_ID=ZGViOTlkZmItNjgzNS00N2QyLTgwZmQtOTRmN2M2NWE3YjU5|1409055872|c9aebc1abdb0215c844a6fd87b39b55f072bfefb'})
+Traceback (most recent call last):
+  File "/home/kpx/evomailing/oblachko/env/local/lib/python2.7/site-packages/tornado/web.py", line 1141, in _when_complete
+    callback()
+  File "/home/kpx/evomailing/oblachko/env/local/lib/python2.7/site-packages/tornado/web.py", line 1162, in _execute_method
+    self._when_complete(method(*self.path_args, **self.path_kwargs),
+  File "/home/kpx/evomailing/oblachko/handlers/basehandler.py", line 71, in get
+    self.render('details.html')
+  File "/home/kpx/evomailing/oblachko/handlers/basehandler.py", line 34, in render
+    self.write(jinja_env.get_template(template).render(self.context))
+  File "/home/kpx/evomailing/oblachko/env/local/lib/python2.7/site-packages/jinja2/environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/kpx/evomailing/oblachko/env/local/lib/python2.7/site-packages/jinja2/environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kpx/evomailing/oblachko/./templates/details.html", line 1, in top-level template code
+    {% extends 'base.html' %}
+  File "/home/kpx/evomailing/oblachko/./templates/base.html", line 32, in top-level template code
+    {% block body %}
+  File "/home/kpx/evomailing/oblachko/./templates/base.html", line 34, in block "body"
+    {% block content %}
+  File "/home/kpx/evomailing/oblachko/./templates/details.html", line 9, in block "content"
+    {% for key, value in item.iteritems() %}
+  File "/home/kpx/evomailing/oblachko/env/local/lib/python2.7/site-packages/jinja2/environment.py", line 397, in getattr
+    return getattr(obj, attribute)
+UndefinedError: 'item' is undefined
+ERROR        web.py                   [LINE:1635][2014-08-29 16:36:50]  500 GET /details/540064d93f1ac87ecced560e (127.0.0.1) 17.75ms
+INFO         base.py                  [LINE:13][2014-08-29 16:37:47]  Работаем с базой данных evo_dev.
+INFO         web.py                   [LINE:1635][2014-08-29 16:37:50]  200 GET /details/540064d93f1ac87ecced560e (127.0.0.1) 29.50ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:37:51]  304 GET /static/css/bootstrap.css (127.0.0.1) 10.54ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:37:51]  304 GET /static/css/animate.css (127.0.0.1) 1.45ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:37:51]  304 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 1.09ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:37:51]  304 GET /static/css/font-awesome.min.css (127.0.0.1) 1.23ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:37:51]  304 GET /static/css/font.css (127.0.0.1) 1.04ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:37:51]  304 GET /static/css/plugin.css (127.0.0.1) 1.25ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:37:51]  304 GET /static/css/app.css (127.0.0.1) 1.62ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:37:51]  304 GET /static/js/jquery.min.js (127.0.0.1) 1.63ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:37:51]  304 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 1.11ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:37:51]  304 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 1.32ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:37:51]  304 GET /static/js/bootstrap.js (127.0.0.1) 1.99ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:37:51]  304 GET /static/js/app.js (127.0.0.1) 1.23ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:37:51]  304 GET /static/js/app.plugin.js (127.0.0.1) 1.59ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:37:51]  304 GET /static/js/app.data.js (127.0.0.1) 1.25ms
+DEBUG        common.py                [LINE:15][2014-08-29 16:38:04]  Выбрано из БД: 0 - 21
+INFO         web.py                   [LINE:1635][2014-08-29 16:38:05]  200 GET / (127.0.0.1) 1246.35ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:38:05]  304 GET /static/css/bootstrap.css (127.0.0.1) 1.57ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:38:05]  304 GET /static/css/app.css (127.0.0.1) 1.14ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:38:05]  304 GET /static/css/plugin.css (127.0.0.1) 0.88ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:38:05]  304 GET /static/css/font.css (127.0.0.1) 0.83ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:38:05]  304 GET /static/css/font-awesome.min.css (127.0.0.1) 1.85ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:38:05]  304 GET /static/css/animate.css (127.0.0.1) 0.84ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:38:05]  304 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 1.05ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:38:05]  304 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 0.84ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:38:05]  304 GET /static/js/jquery.min.js (127.0.0.1) 0.82ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:38:05]  304 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 0.76ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:38:05]  304 GET /static/js/bootstrap.js (127.0.0.1) 0.91ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:38:05]  304 GET /static/js/app.js (127.0.0.1) 0.85ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:38:05]  304 GET /static/js/app.plugin.js (127.0.0.1) 1.11ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:38:05]  304 GET /static/js/app.data.js (127.0.0.1) 0.97ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:38:09]  200 GET /details/540064d93f1ac87ecced5610 (127.0.0.1) 2.80ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:38:09]  304 GET /static/css/bootstrap.css (127.0.0.1) 1.38ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:38:09]  304 GET /static/css/plugin.css (127.0.0.1) 1.25ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:38:09]  304 GET /static/css/font.css (127.0.0.1) 1.84ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:38:09]  304 GET /static/css/font-awesome.min.css (127.0.0.1) 1.87ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:38:09]  304 GET /static/css/animate.css (127.0.0.1) 1.17ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:38:09]  304 GET /static/css/app.css (127.0.0.1) 1.40ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:38:09]  304 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 1.34ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:38:09]  304 GET /static/js/app.js (127.0.0.1) 1.12ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:38:09]  304 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 1.00ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:38:09]  304 GET /static/js/jquery.min.js (127.0.0.1) 0.81ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:38:09]  304 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 0.80ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:38:09]  304 GET /static/js/bootstrap.js (127.0.0.1) 0.73ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:38:09]  304 GET /static/js/app.plugin.js (127.0.0.1) 1.51ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:38:09]  304 GET /static/js/app.data.js (127.0.0.1) 1.06ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:39:15]  200 GET /details/540064d93f1ac87ecced5610 (127.0.0.1) 13.40ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:39:15]  200 GET /static/css/bootstrap.css (127.0.0.1) 2.35ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:39:15]  200 GET /static/css/animate.css (127.0.0.1) 1.29ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:39:15]  200 GET /static/css/font-awesome.min.css (127.0.0.1) 1.23ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:39:15]  200 GET /static/css/app.css (127.0.0.1) 1.21ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:39:15]  200 GET /static/css/plugin.css (127.0.0.1) 1.14ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:39:15]  200 GET /static/css/font.css (127.0.0.1) 1.40ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:39:15]  200 GET /static/js/jquery.min.js (127.0.0.1) 2.07ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:39:16]  200 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 1.68ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:39:16]  200 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 1.13ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:39:16]  200 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 1.18ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:39:16]  200 GET /static/js/bootstrap.js (127.0.0.1) 1.26ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:39:16]  200 GET /static/js/app.js (127.0.0.1) 1.19ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:39:16]  200 GET /static/js/app.plugin.js (127.0.0.1) 1.15ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:39:16]  200 GET /static/js/app.data.js (127.0.0.1) 1.19ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:39:16]  200 GET /static/fonts/opensans/opensans.woff (127.0.0.1) 1.38ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:39:16]  200 GET /static/fonts/opensans/opensans-bold.woff (127.0.0.1) 1.33ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:39:16]  200 GET /static/fonts/fontawesome-webfont.woff?v=4.0.3 (127.0.0.1) 3.87ms
+WARNING      web.py                   [LINE:1635][2014-08-29 16:39:17]  404 GET /favicon.ico (127.0.0.1) 0.87ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:39:50]  200 GET /details/540064d93f1ac87ecced5610 (127.0.0.1) 18.37ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:39:50]  200 GET /static/css/bootstrap.css (127.0.0.1) 1.45ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:39:51]  200 GET /static/css/animate.css (127.0.0.1) 1.27ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:39:51]  200 GET /static/css/font-awesome.min.css (127.0.0.1) 1.12ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:39:51]  200 GET /static/css/font.css (127.0.0.1) 1.20ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:39:51]  200 GET /static/css/plugin.css (127.0.0.1) 1.10ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:39:51]  200 GET /static/js/jquery.min.js (127.0.0.1) 1.97ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:39:51]  200 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 1.85ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:39:51]  200 GET /static/css/app.css (127.0.0.1) 2.98ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:39:51]  200 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 2.96ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:39:51]  200 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 1.19ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:39:51]  200 GET /static/js/bootstrap.js (127.0.0.1) 1.26ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:39:51]  200 GET /static/js/app.js (127.0.0.1) 1.23ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:39:51]  200 GET /static/js/app.plugin.js (127.0.0.1) 1.62ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:39:51]  200 GET /static/js/app.data.js (127.0.0.1) 1.88ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:39:51]  200 GET /static/fonts/fontawesome-webfont.woff?v=4.0.3 (127.0.0.1) 1.42ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:39:51]  200 GET /static/fonts/opensans/opensans.woff (127.0.0.1) 0.97ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:39:51]  200 GET /static/fonts/opensans/opensans-bold.woff (127.0.0.1) 2.30ms
+WARNING      web.py                   [LINE:1635][2014-08-29 16:39:52]  404 GET /favicon.ico (127.0.0.1) 0.95ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:40:27]  200 GET /details/540064d93f1ac87ecced5610 (127.0.0.1) 13.17ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:40:28]  304 GET /static/css/bootstrap.css (127.0.0.1) 1.08ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:40:28]  304 GET /static/css/font.css (127.0.0.1) 1.02ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:40:28]  304 GET /static/css/animate.css (127.0.0.1) 1.00ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:40:28]  304 GET /static/css/font-awesome.min.css (127.0.0.1) 0.98ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:40:28]  304 GET /static/js/jquery.min.js (127.0.0.1) 1.00ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:40:28]  304 GET /static/css/app.css (127.0.0.1) 3.17ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:40:28]  304 GET /static/css/plugin.css (127.0.0.1) 1.46ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:40:28]  304 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 1.39ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:40:28]  304 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 1.00ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:40:28]  304 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 1.31ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:40:28]  304 GET /static/js/bootstrap.js (127.0.0.1) 0.99ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:40:28]  304 GET /static/js/app.js (127.0.0.1) 0.97ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:40:28]  304 GET /static/js/app.data.js (127.0.0.1) 0.98ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:40:28]  304 GET /static/js/app.plugin.js (127.0.0.1) 0.95ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:40:42]  200 GET /details/540064d93f1ac87ecced5610 (127.0.0.1) 14.35ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:40:43]  200 GET /static/css/bootstrap.css (127.0.0.1) 1.19ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:40:43]  200 GET /static/css/app.css (127.0.0.1) 1.21ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:40:43]  200 GET /static/css/font-awesome.min.css (127.0.0.1) 1.12ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:40:43]  200 GET /static/css/font.css (127.0.0.1) 1.08ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:40:43]  200 GET /static/css/animate.css (127.0.0.1) 1.22ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:40:43]  200 GET /static/css/plugin.css (127.0.0.1) 1.63ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:40:43]  200 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 1.16ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:40:43]  200 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 1.68ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:40:43]  200 GET /static/js/jquery.min.js (127.0.0.1) 1.64ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:40:43]  200 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 1.23ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:40:43]  200 GET /static/js/bootstrap.js (127.0.0.1) 1.16ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:40:43]  200 GET /static/js/app.js (127.0.0.1) 0.87ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:40:43]  200 GET /static/js/app.plugin.js (127.0.0.1) 1.08ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:40:43]  200 GET /static/js/app.data.js (127.0.0.1) 1.53ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:40:43]  200 GET /static/fonts/fontawesome-webfont.woff?v=4.0.3 (127.0.0.1) 1.42ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:40:43]  200 GET /static/fonts/opensans/opensans.woff (127.0.0.1) 1.39ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:40:43]  200 GET /static/fonts/opensans/opensans-bold.woff (127.0.0.1) 1.41ms
+WARNING      web.py                   [LINE:1635][2014-08-29 16:40:44]  404 GET /favicon.ico (127.0.0.1) 0.95ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:41:31]  200 GET /details/540064d93f1ac87ecced5610 (127.0.0.1) 13.16ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:41:32]  304 GET /static/css/animate.css (127.0.0.1) 1.04ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:41:32]  304 GET /static/css/font-awesome.min.css (127.0.0.1) 1.23ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:41:32]  304 GET /static/css/bootstrap.css (127.0.0.1) 1.54ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:41:32]  304 GET /static/css/app.css (127.0.0.1) 4.80ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:41:32]  304 GET /static/css/plugin.css (127.0.0.1) 1.02ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:41:32]  304 GET /static/css/font.css (127.0.0.1) 0.92ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:41:32]  304 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 0.94ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:41:32]  304 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 1.04ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:41:32]  304 GET /static/js/jquery.min.js (127.0.0.1) 0.89ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:41:32]  304 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 1.09ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:41:32]  304 GET /static/js/bootstrap.js (127.0.0.1) 1.01ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:41:32]  304 GET /static/js/app.js (127.0.0.1) 1.51ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:41:32]  304 GET /static/js/app.plugin.js (127.0.0.1) 0.99ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:41:32]  304 GET /static/js/app.data.js (127.0.0.1) 1.05ms
+DEBUG        common.py                [LINE:15][2014-08-29 16:41:36]  Выбрано из БД: 0 - 21
+INFO         web.py                   [LINE:1635][2014-08-29 16:41:37]  200 GET / (127.0.0.1) 1281.93ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:41:37]  304 GET /static/css/bootstrap.css (127.0.0.1) 1.08ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:41:37]  304 GET /static/css/animate.css (127.0.0.1) 0.95ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:41:37]  304 GET /static/css/font-awesome.min.css (127.0.0.1) 1.08ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:41:37]  304 GET /static/css/font.css (127.0.0.1) 0.76ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:41:37]  304 GET /static/css/plugin.css (127.0.0.1) 0.78ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:41:37]  304 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 0.75ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:41:37]  304 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 0.98ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:41:37]  304 GET /static/js/jquery.min.js (127.0.0.1) 0.95ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:41:37]  304 GET /static/css/app.css (127.0.0.1) 1.00ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:41:37]  304 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 1.85ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:41:37]  304 GET /static/js/bootstrap.js (127.0.0.1) 1.05ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:41:37]  304 GET /static/js/app.js (127.0.0.1) 1.55ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:41:37]  304 GET /static/js/app.plugin.js (127.0.0.1) 0.96ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:41:37]  304 GET /static/js/app.data.js (127.0.0.1) 1.28ms
+DEBUG        common.py                [LINE:15][2014-08-29 16:43:08]  Выбрано из БД: 0 - 21
+INFO         web.py                   [LINE:1635][2014-08-29 16:43:09]  200 GET / (127.0.0.1) 1642.55ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:43:10]  304 GET /static/css/bootstrap.css (127.0.0.1) 1.01ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:43:10]  304 GET /static/css/plugin.css (127.0.0.1) 1.08ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:43:10]  304 GET /static/css/font-awesome.min.css (127.0.0.1) 0.88ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:43:10]  304 GET /static/css/animate.css (127.0.0.1) 0.95ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:43:10]  304 GET /static/css/app.css (127.0.0.1) 0.94ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:43:10]  304 GET /static/css/font.css (127.0.0.1) 0.90ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:43:10]  304 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 1.01ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:43:10]  304 GET /static/js/bootstrap.js (127.0.0.1) 0.98ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:43:10]  304 GET /static/js/app.js (127.0.0.1) 0.88ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:43:10]  304 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 0.92ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:43:10]  304 GET /static/js/jquery.min.js (127.0.0.1) 0.91ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:43:10]  304 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 1.01ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:43:10]  304 GET /static/js/app.plugin.js (127.0.0.1) 0.96ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:43:10]  304 GET /static/js/app.data.js (127.0.0.1) 2.09ms
+INFO         base.py                  [LINE:13][2014-08-29 16:43:28]  Работаем с базой данных evo_dev.
+DEBUG        common.py                [LINE:15][2014-08-29 16:43:28]  Выбрано из БД: 0 - 50
+INFO         web.py                   [LINE:1635][2014-08-29 16:43:29]  200 GET / (127.0.0.1) 955.85ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:43:30]  200 GET /static/css/bootstrap.css (127.0.0.1) 18.53ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:43:30]  200 GET /static/css/animate.css (127.0.0.1) 4.08ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:43:30]  200 GET /static/css/font-awesome.min.css (127.0.0.1) 3.74ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:43:30]  200 GET /static/css/font.css (127.0.0.1) 2.03ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:43:30]  200 GET /static/css/plugin.css (127.0.0.1) 2.35ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:43:30]  200 GET /static/css/app.css (127.0.0.1) 1.59ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:43:30]  200 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 1.28ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:43:30]  200 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 1.30ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:43:30]  200 GET /static/js/jquery.min.js (127.0.0.1) 2.50ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:43:30]  200 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 2.18ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:43:30]  200 GET /static/js/bootstrap.js (127.0.0.1) 1.64ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:43:30]  200 GET /static/js/app.js (127.0.0.1) 1.36ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:43:30]  200 GET /static/js/app.plugin.js (127.0.0.1) 1.37ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:43:30]  200 GET /static/js/app.data.js (127.0.0.1) 1.43ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:43:30]  200 GET /static/fonts/opensans/opensans-bold.woff (127.0.0.1) 1.42ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:43:30]  200 GET /static/fonts/fontawesome-webfont.woff?v=4.0.3 (127.0.0.1) 1.75ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:43:30]  200 GET /static/fonts/opensans/opensans.woff (127.0.0.1) 1.36ms
+WARNING      web.py                   [LINE:1635][2014-08-29 16:43:33]  404 GET /favicon.ico (127.0.0.1) 0.96ms
+DEBUG        common.py                [LINE:15][2014-08-29 16:45:36]  Выбрано из БД: 0 - 50
+INFO         web.py                   [LINE:1635][2014-08-29 16:45:37]  200 GET / (127.0.0.1) 999.09ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:45:37]  304 GET /static/css/bootstrap.css (127.0.0.1) 0.78ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:45:37]  304 GET /static/css/font-awesome.min.css (127.0.0.1) 1.03ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:45:37]  304 GET /static/css/animate.css (127.0.0.1) 1.73ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:45:37]  304 GET /static/css/font.css (127.0.0.1) 1.82ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:45:37]  304 GET /static/js/jquery.min.js (127.0.0.1) 0.85ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:45:37]  304 GET /static/css/plugin.css (127.0.0.1) 0.68ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:45:37]  304 GET /static/css/app.css (127.0.0.1) 0.73ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:45:37]  304 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 0.77ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:45:37]  304 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 0.98ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:45:37]  304 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 1.04ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:45:37]  304 GET /static/js/bootstrap.js (127.0.0.1) 0.83ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:45:37]  304 GET /static/js/app.js (127.0.0.1) 0.83ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:45:37]  304 GET /static/js/app.data.js (127.0.0.1) 0.75ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:45:37]  304 GET /static/js/app.plugin.js (127.0.0.1) 0.87ms
+DEBUG        common.py                [LINE:15][2014-08-29 16:45:45]  Выбрано из БД: 50 - 100
+INFO         web.py                   [LINE:1635][2014-08-29 16:45:46]  200 GET /?page=2 (127.0.0.1) 1152.85ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:45:46]  304 GET /static/css/bootstrap.css (127.0.0.1) 0.99ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:45:46]  304 GET /static/css/animate.css (127.0.0.1) 1.11ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:45:46]  304 GET /static/css/font-awesome.min.css (127.0.0.1) 0.87ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:45:46]  304 GET /static/css/font.css (127.0.0.1) 0.94ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:45:46]  304 GET /static/css/app.css (127.0.0.1) 0.85ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:45:46]  304 GET /static/js/jquery.min.js (127.0.0.1) 0.86ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:45:46]  304 GET /static/css/plugin.css (127.0.0.1) 0.93ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:45:46]  304 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 1.00ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:45:46]  304 GET /static/js/bootstrap.js (127.0.0.1) 0.93ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:45:46]  304 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 0.94ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:45:46]  304 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 1.07ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:45:46]  304 GET /static/js/app.plugin.js (127.0.0.1) 1.51ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:45:46]  304 GET /static/js/app.data.js (127.0.0.1) 0.98ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:45:46]  304 GET /static/js/app.js (127.0.0.1) 0.99ms
+DEBUG        common.py                [LINE:15][2014-08-29 16:45:54]  Выбрано из БД: 100 - 150
+INFO         web.py                   [LINE:1635][2014-08-29 16:45:55]  200 GET /?page=3 (127.0.0.1) 1392.10ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:45:56]  304 GET /static/css/bootstrap.css (127.0.0.1) 1.43ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:45:56]  304 GET /static/css/animate.css (127.0.0.1) 1.19ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:45:56]  304 GET /static/css/font-awesome.min.css (127.0.0.1) 0.97ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:45:56]  304 GET /static/css/font.css (127.0.0.1) 1.46ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:45:56]  304 GET /static/css/plugin.css (127.0.0.1) 1.05ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:45:56]  304 GET /static/css/app.css (127.0.0.1) 0.91ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:45:56]  304 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 0.97ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:45:56]  304 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 1.13ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:45:56]  304 GET /static/js/jquery.min.js (127.0.0.1) 2.31ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:45:56]  304 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 1.98ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:45:56]  304 GET /static/js/app.js (127.0.0.1) 2.19ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:45:56]  304 GET /static/js/bootstrap.js (127.0.0.1) 1.42ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:45:56]  304 GET /static/js/app.plugin.js (127.0.0.1) 1.43ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:45:56]  304 GET /static/js/app.data.js (127.0.0.1) 1.36ms
+DEBUG        common.py                [LINE:15][2014-08-29 16:46:16]  Выбрано из БД: 100 - 150
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:17]  200 GET /?page=3 (127.0.0.1) 1041.02ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:17]  200 GET /static/css/bootstrap.css (127.0.0.1) 2.80ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:17]  200 GET /static/css/animate.css (127.0.0.1) 1.49ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:17]  200 GET /static/css/font-awesome.min.css (127.0.0.1) 1.23ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:17]  200 GET /static/css/font.css (127.0.0.1) 1.48ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:17]  200 GET /static/css/plugin.css (127.0.0.1) 1.18ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:17]  200 GET /static/css/app.css (127.0.0.1) 1.26ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:17]  200 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 1.21ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:17]  200 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 1.15ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:17]  200 GET /static/js/jquery.min.js (127.0.0.1) 1.31ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:17]  200 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 1.10ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:17]  200 GET /static/js/bootstrap.js (127.0.0.1) 1.05ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:17]  200 GET /static/js/app.js (127.0.0.1) 1.44ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:17]  200 GET /static/js/app.plugin.js (127.0.0.1) 1.13ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:17]  200 GET /static/js/app.data.js (127.0.0.1) 1.04ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:18]  200 GET /static/fonts/opensans/opensans-bold.woff (127.0.0.1) 1.05ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:18]  200 GET /static/fonts/fontawesome-webfont.woff?v=4.0.3 (127.0.0.1) 1.30ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:18]  200 GET /static/fonts/opensans/opensans.woff (127.0.0.1) 1.24ms
+WARNING      web.py                   [LINE:1635][2014-08-29 16:46:21]  404 GET /favicon.ico (127.0.0.1) 0.98ms
+DEBUG        common.py                [LINE:15][2014-08-29 16:46:27]  Выбрано из БД: 100 - 150
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:29]  200 GET /?page=3 (127.0.0.1) 1637.62ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:29]  200 GET /static/css/bootstrap.css (127.0.0.1) 1.38ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:29]  200 GET /static/css/app.css (127.0.0.1) 1.13ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:29]  200 GET /static/css/font.css (127.0.0.1) 0.97ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:29]  200 GET /static/css/font-awesome.min.css (127.0.0.1) 1.11ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:29]  200 GET /static/css/plugin.css (127.0.0.1) 0.96ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:29]  200 GET /static/css/animate.css (127.0.0.1) 1.77ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:29]  200 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 1.14ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:29]  200 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 1.13ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:29]  200 GET /static/js/jquery.min.js (127.0.0.1) 1.25ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:29]  200 GET /static/js/bootstrap.js (127.0.0.1) 1.59ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:29]  200 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 1.09ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:29]  200 GET /static/js/app.js (127.0.0.1) 2.65ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:29]  200 GET /static/js/app.plugin.js (127.0.0.1) 1.13ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:29]  200 GET /static/js/app.data.js (127.0.0.1) 1.15ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:30]  200 GET /static/fonts/opensans/opensans-bold.woff (127.0.0.1) 1.24ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:30]  200 GET /static/fonts/fontawesome-webfont.woff?v=4.0.3 (127.0.0.1) 1.36ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:30]  200 GET /static/fonts/opensans/opensans.woff (127.0.0.1) 1.20ms
+WARNING      web.py                   [LINE:1635][2014-08-29 16:46:32]  404 GET /favicon.ico (127.0.0.1) 1.06ms
+DEBUG        common.py                [LINE:15][2014-08-29 16:46:51]  Выбрано из БД: 100 - 150
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:52]  200 GET /?page=3 (127.0.0.1) 1251.77ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:53]  200 GET /static/css/bootstrap.css (127.0.0.1) 1.54ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:53]  200 GET /static/css/animate.css (127.0.0.1) 2.07ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:53]  200 GET /static/css/font-awesome.min.css (127.0.0.1) 1.39ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:53]  200 GET /static/css/font.css (127.0.0.1) 0.87ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:53]  200 GET /static/css/plugin.css (127.0.0.1) 0.69ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:53]  200 GET /static/css/app.css (127.0.0.1) 0.73ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:53]  200 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 1.26ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:53]  200 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 2.21ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:53]  200 GET /static/js/jquery.min.js (127.0.0.1) 2.27ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:53]  200 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 2.53ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:53]  200 GET /static/js/bootstrap.js (127.0.0.1) 1.76ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:53]  200 GET /static/js/app.plugin.js (127.0.0.1) 1.74ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:53]  200 GET /static/js/app.js (127.0.0.1) 1.89ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:53]  200 GET /static/js/app.data.js (127.0.0.1) 2.45ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:53]  200 GET /static/fonts/opensans/opensans-bold.woff (127.0.0.1) 1.22ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:53]  200 GET /static/fonts/fontawesome-webfont.woff?v=4.0.3 (127.0.0.1) 1.81ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:46:53]  200 GET /static/fonts/opensans/opensans.woff (127.0.0.1) 1.22ms
+WARNING      web.py                   [LINE:1635][2014-08-29 16:46:56]  404 GET /favicon.ico (127.0.0.1) 0.95ms
+DEBUG        common.py                [LINE:15][2014-08-29 16:48:12]  Выбрано из БД: 100 - 150
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:13]  200 GET /?page=3 (127.0.0.1) 1245.03ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:13]  200 GET /static/css/bootstrap.css (127.0.0.1) 1.86ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:13]  200 GET /static/css/plugin.css (127.0.0.1) 1.88ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:13]  200 GET /static/css/app.css (127.0.0.1) 1.48ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:13]  200 GET /static/css/font-awesome.min.css (127.0.0.1) 1.11ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:13]  200 GET /static/css/font.css (127.0.0.1) 1.00ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:13]  200 GET /static/css/animate.css (127.0.0.1) 1.26ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:13]  200 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 1.75ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:13]  200 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 1.41ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:13]  200 GET /static/js/jquery.min.js (127.0.0.1) 1.28ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:13]  200 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 1.11ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:13]  200 GET /static/js/bootstrap.js (127.0.0.1) 1.16ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:13]  200 GET /static/js/app.js (127.0.0.1) 1.14ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:13]  200 GET /static/js/app.plugin.js (127.0.0.1) 1.55ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:13]  200 GET /static/js/app.data.js (127.0.0.1) 1.18ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:14]  200 GET /static/fonts/opensans/opensans-bold.woff (127.0.0.1) 1.21ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:14]  200 GET /static/fonts/fontawesome-webfont.woff?v=4.0.3 (127.0.0.1) 1.09ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:14]  200 GET /static/fonts/opensans/opensans.woff (127.0.0.1) 1.22ms
+WARNING      web.py                   [LINE:1635][2014-08-29 16:48:17]  404 GET /favicon.ico (127.0.0.1) 0.87ms
+DEBUG        common.py                [LINE:15][2014-08-29 16:48:29]  Выбрано из БД: 100 - 150
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:30]  200 GET /?page=3 (127.0.0.1) 1136.61ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:31]  200 GET /static/css/bootstrap.css (127.0.0.1) 1.71ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:31]  200 GET /static/css/animate.css (127.0.0.1) 2.04ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:31]  200 GET /static/css/font.css (127.0.0.1) 1.35ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:31]  200 GET /static/css/font-awesome.min.css (127.0.0.1) 1.09ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:31]  200 GET /static/css/plugin.css (127.0.0.1) 1.03ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:31]  200 GET /static/css/app.css (127.0.0.1) 1.15ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:31]  200 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 2.60ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:31]  200 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 1.57ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:31]  200 GET /static/js/jquery.min.js (127.0.0.1) 1.28ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:31]  200 GET /static/js/bootstrap.js (127.0.0.1) 1.19ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:31]  200 GET /static/js/app.js (127.0.0.1) 1.48ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:31]  200 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 1.13ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:31]  200 GET /static/js/app.plugin.js (127.0.0.1) 1.63ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:31]  200 GET /static/js/app.data.js (127.0.0.1) 1.15ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:31]  200 GET /static/fonts/opensans/opensans-bold.woff (127.0.0.1) 1.21ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:31]  200 GET /static/fonts/fontawesome-webfont.woff?v=4.0.3 (127.0.0.1) 1.71ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:31]  200 GET /static/fonts/opensans/opensans.woff (127.0.0.1) 1.35ms
+WARNING      web.py                   [LINE:1635][2014-08-29 16:48:33]  404 GET /favicon.ico (127.0.0.1) 0.92ms
+DEBUG        common.py                [LINE:15][2014-08-29 16:48:47]  Выбрано из БД: 100 - 150
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:48]  200 GET /?page=3 (127.0.0.1) 1260.23ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:48]  200 GET /static/css/bootstrap.css (127.0.0.1) 1.99ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:49]  200 GET /static/css/animate.css (127.0.0.1) 1.29ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:49]  200 GET /static/css/font-awesome.min.css (127.0.0.1) 1.71ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:49]  200 GET /static/css/font.css (127.0.0.1) 1.21ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:49]  200 GET /static/css/plugin.css (127.0.0.1) 1.69ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:49]  200 GET /static/css/app.css (127.0.0.1) 1.33ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:49]  200 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 1.19ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:49]  200 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 1.32ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:49]  200 GET /static/js/jquery.min.js (127.0.0.1) 1.40ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:49]  200 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 1.44ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:49]  200 GET /static/js/bootstrap.js (127.0.0.1) 1.70ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:49]  200 GET /static/js/app.js (127.0.0.1) 1.26ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:49]  200 GET /static/js/app.plugin.js (127.0.0.1) 1.54ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:49]  200 GET /static/js/app.data.js (127.0.0.1) 2.08ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:49]  200 GET /static/fonts/opensans/opensans-bold.woff (127.0.0.1) 1.24ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:49]  200 GET /static/fonts/fontawesome-webfont.woff?v=4.0.3 (127.0.0.1) 1.41ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:48:49]  200 GET /static/fonts/opensans/opensans.woff (127.0.0.1) 1.47ms
+WARNING      web.py                   [LINE:1635][2014-08-29 16:48:52]  404 GET /favicon.ico (127.0.0.1) 0.94ms
+DEBUG        common.py                [LINE:15][2014-08-29 16:49:07]  Выбрано из БД: 100 - 150
+INFO         web.py                   [LINE:1635][2014-08-29 16:49:08]  200 GET /?page=3 (127.0.0.1) 1268.57ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:49:08]  200 GET /static/css/bootstrap.css (127.0.0.1) 1.43ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:49:08]  200 GET /static/css/animate.css (127.0.0.1) 1.60ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:49:08]  200 GET /static/css/font-awesome.min.css (127.0.0.1) 2.06ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:49:08]  200 GET /static/css/font.css (127.0.0.1) 1.55ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:49:08]  200 GET /static/css/plugin.css (127.0.0.1) 1.93ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:49:08]  200 GET /static/css/app.css (127.0.0.1) 2.55ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:49:08]  200 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 2.07ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:49:08]  200 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 1.76ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:49:08]  200 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 1.66ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:49:08]  200 GET /static/js/jquery.min.js (127.0.0.1) 2.73ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:49:08]  200 GET /static/js/app.plugin.js (127.0.0.1) 1.62ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:49:08]  200 GET /static/js/app.data.js (127.0.0.1) 1.69ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:49:08]  200 GET /static/js/app.js (127.0.0.1) 1.66ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:49:08]  200 GET /static/js/bootstrap.js (127.0.0.1) 1.71ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:49:09]  200 GET /static/fonts/opensans/opensans-bold.woff (127.0.0.1) 1.23ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:49:09]  200 GET /static/fonts/fontawesome-webfont.woff?v=4.0.3 (127.0.0.1) 1.38ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:49:09]  200 GET /static/fonts/opensans/opensans.woff (127.0.0.1) 1.20ms
+WARNING      web.py                   [LINE:1635][2014-08-29 16:49:11]  404 GET /favicon.ico (127.0.0.1) 1.33ms
+DEBUG        common.py                [LINE:15][2014-08-29 16:49:44]  Выбрано из БД: 100 - 150
+INFO         web.py                   [LINE:1635][2014-08-29 16:49:45]  200 GET /?page=3 (127.0.0.1) 1130.30ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:49:45]  200 GET /static/css/bootstrap.css (127.0.0.1) 1.66ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:49:45]  200 GET /static/css/plugin.css (127.0.0.1) 1.50ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:49:45]  200 GET /static/css/font.css (127.0.0.1) 1.70ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:49:45]  200 GET /static/css/font-awesome.min.css (127.0.0.1) 1.91ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:49:45]  200 GET /static/css/app.css (127.0.0.1) 1.20ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:49:45]  200 GET /static/css/animate.css (127.0.0.1) 1.85ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:49:45]  200 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 1.15ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:49:45]  200 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 1.10ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:49:45]  200 GET /static/js/jquery.min.js (127.0.0.1) 1.27ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:49:45]  200 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 1.10ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:49:45]  200 GET /static/js/bootstrap.js (127.0.0.1) 1.25ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:49:45]  200 GET /static/js/app.js (127.0.0.1) 1.42ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:49:45]  200 GET /static/js/app.plugin.js (127.0.0.1) 1.10ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:49:45]  200 GET /static/js/app.data.js (127.0.0.1) 1.09ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:49:45]  200 GET /static/fonts/opensans/opensans-bold.woff (127.0.0.1) 1.06ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:49:45]  200 GET /static/fonts/fontawesome-webfont.woff?v=4.0.3 (127.0.0.1) 1.37ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:49:45]  200 GET /static/fonts/opensans/opensans.woff (127.0.0.1) 1.23ms
+WARNING      web.py                   [LINE:1635][2014-08-29 16:49:48]  404 GET /favicon.ico (127.0.0.1) 0.94ms
+INFO         base.py                  [LINE:13][2014-08-29 16:52:08]  Работаем с базой данных evo_dev.
+DEBUG        common.py                [LINE:15][2014-08-29 16:52:12]  Выбрано из БД: 100 - 150
+INFO         web.py                   [LINE:1635][2014-08-29 16:52:13]  200 GET /?page=3 (127.0.0.1) 1587.26ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:52:14]  304 GET /static/css/bootstrap.css (127.0.0.1) 8.66ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:52:14]  304 GET /static/css/animate.css (127.0.0.1) 2.08ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:52:14]  304 GET /static/css/font-awesome.min.css (127.0.0.1) 1.29ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:52:14]  304 GET /static/css/font.css (127.0.0.1) 1.11ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:52:14]  304 GET /static/css/plugin.css (127.0.0.1) 2.64ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:52:14]  304 GET /static/css/app.css (127.0.0.1) 4.59ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:52:14]  304 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 1.41ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:52:14]  304 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 1.58ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:52:14]  304 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 1.28ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:52:14]  304 GET /static/js/bootstrap.js (127.0.0.1) 1.32ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:52:14]  304 GET /static/js/jquery.min.js (127.0.0.1) 2.01ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:52:14]  304 GET /static/js/app.plugin.js (127.0.0.1) 1.19ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:52:14]  304 GET /static/js/app.data.js (127.0.0.1) 1.14ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:52:14]  304 GET /static/js/app.js (127.0.0.1) 1.15ms
+DEBUG        common.py                [LINE:15][2014-08-29 16:53:38]  Выбрано из БД: 100 - 150
+INFO         web.py                   [LINE:1635][2014-08-29 16:53:39]  200 GET /?page=3 (127.0.0.1) 1121.37ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:53:39]  304 GET /static/css/bootstrap.css (127.0.0.1) 1.06ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:53:39]  304 GET /static/css/animate.css (127.0.0.1) 1.00ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:53:39]  304 GET /static/css/font-awesome.min.css (127.0.0.1) 0.96ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:53:39]  304 GET /static/css/font.css (127.0.0.1) 1.00ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:53:39]  304 GET /static/css/plugin.css (127.0.0.1) 0.91ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:53:39]  304 GET /static/css/app.css (127.0.0.1) 1.31ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:53:39]  304 GET /static/js/jquery.min.js (127.0.0.1) 0.97ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:53:39]  304 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 1.49ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:53:39]  304 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 1.05ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:53:39]  304 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 1.00ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:53:39]  304 GET /static/js/bootstrap.js (127.0.0.1) 1.02ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:53:39]  304 GET /static/js/app.plugin.js (127.0.0.1) 1.07ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:53:39]  304 GET /static/js/app.js (127.0.0.1) 0.93ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:53:39]  304 GET /static/js/app.data.js (127.0.0.1) 0.98ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:55:35]  200 GET /details/540064d93f1ac87ecced567d (127.0.0.1) 13.77ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:55:35]  304 GET /static/css/bootstrap.css (127.0.0.1) 0.87ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:55:35]  304 GET /static/css/font.css (127.0.0.1) 1.27ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:55:35]  304 GET /static/css/font-awesome.min.css (127.0.0.1) 1.02ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:55:35]  304 GET /static/css/plugin.css (127.0.0.1) 0.90ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:55:35]  304 GET /static/css/app.css (127.0.0.1) 0.86ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:55:35]  304 GET /static/css/animate.css (127.0.0.1) 1.15ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:55:35]  304 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 1.40ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:55:35]  304 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 1.34ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:55:35]  304 GET /static/js/jquery.min.js (127.0.0.1) 1.07ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:55:35]  304 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 1.01ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:55:35]  304 GET /static/js/bootstrap.js (127.0.0.1) 0.96ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:55:35]  304 GET /static/js/app.js (127.0.0.1) 1.34ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:55:35]  304 GET /static/js/app.plugin.js (127.0.0.1) 1.40ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:55:35]  304 GET /static/js/app.data.js (127.0.0.1) 1.21ms
+INFO         base.py                  [LINE:13][2014-08-29 16:56:59]  Работаем с базой данных evo_dev.
+INFO         web.py                   [LINE:1635][2014-08-29 16:57:02]  200 GET /details/540064d93f1ac87ecced567d (127.0.0.1) 31.44ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:57:03]  304 GET /static/css/bootstrap.css (127.0.0.1) 10.21ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:57:03]  304 GET /static/css/animate.css (127.0.0.1) 2.42ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:57:03]  304 GET /static/css/font-awesome.min.css (127.0.0.1) 1.18ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:57:03]  304 GET /static/css/font.css (127.0.0.1) 1.02ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:57:03]  304 GET /static/css/plugin.css (127.0.0.1) 1.33ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:57:03]  304 GET /static/css/app.css (127.0.0.1) 1.34ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:57:03]  304 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 1.36ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:57:03]  304 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 2.20ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:57:03]  304 GET /static/js/jquery.min.js (127.0.0.1) 2.31ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:57:03]  304 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 1.32ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:57:03]  304 GET /static/js/bootstrap.js (127.0.0.1) 1.47ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:57:03]  304 GET /static/js/app.js (127.0.0.1) 1.83ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:57:03]  304 GET /static/js/app.plugin.js (127.0.0.1) 1.21ms
+INFO         web.py                   [LINE:1635][2014-08-29 16:57:03]  304 GET /static/js/app.data.js (127.0.0.1) 1.49ms
+INFO         base.py                  [LINE:13][2014-08-29 17:08:25]  Работаем с базой данных evo_dev.
+INFO         web.py                   [LINE:1635][2014-08-29 17:08:29]  200 GET /details/540064d93f1ac87ecced567d (127.0.0.1) 85.40ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:08:30]  304 GET /static/css/bootstrap.css (127.0.0.1) 14.84ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:08:30]  304 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 1.97ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:08:30]  304 GET /static/css/animate.css (127.0.0.1) 2.83ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:08:30]  304 GET /static/css/font-awesome.min.css (127.0.0.1) 2.02ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:08:30]  304 GET /static/css/font.css (127.0.0.1) 2.39ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:08:30]  304 GET /static/css/plugin.css (127.0.0.1) 1.74ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:08:30]  304 GET /static/css/app.css (127.0.0.1) 2.10ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:08:30]  304 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 2.65ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:08:30]  304 GET /static/js/jquery.min.js (127.0.0.1) 2.51ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:08:30]  304 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 3.79ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:08:30]  304 GET /static/js/bootstrap.js (127.0.0.1) 3.11ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:08:30]  304 GET /static/js/app.js (127.0.0.1) 1.71ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:08:30]  304 GET /static/js/app.plugin.js (127.0.0.1) 1.79ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:08:30]  304 GET /static/js/app.data.js (127.0.0.1) 1.81ms
+DEBUG        common.py                [LINE:15][2014-08-29 17:09:28]  Выбрано из БД: 0 - 50
+INFO         web.py                   [LINE:1635][2014-08-29 17:09:30]  200 GET / (127.0.0.1) 1410.45ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:09:30]  304 GET /static/css/bootstrap.css (127.0.0.1) 1.13ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:09:30]  304 GET /static/css/app.css (127.0.0.1) 0.96ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:09:30]  304 GET /static/css/plugin.css (127.0.0.1) 0.84ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:09:30]  304 GET /static/css/font.css (127.0.0.1) 1.28ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:09:30]  304 GET /static/css/font-awesome.min.css (127.0.0.1) 0.86ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:09:30]  304 GET /static/css/animate.css (127.0.0.1) 1.01ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:09:30]  304 GET /static/js/jquery.min.js (127.0.0.1) 0.79ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:09:31]  304 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 1.12ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:09:31]  304 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 1.03ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:09:31]  304 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 1.00ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:09:31]  304 GET /static/js/bootstrap.js (127.0.0.1) 1.65ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:09:31]  304 GET /static/js/app.js (127.0.0.1) 1.06ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:09:31]  304 GET /static/js/app.plugin.js (127.0.0.1) 1.04ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:09:31]  304 GET /static/js/app.data.js (127.0.0.1) 1.05ms
+DEBUG        common.py                [LINE:15][2014-08-29 17:10:32]  Выбрано из БД: 180400 - 180450
+ERROR        web.py                   [LINE:1228][2014-08-29 17:10:33]  Uncaught exception GET /?page=3609 (127.0.0.1)
+HTTPRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/?page=3609', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4', 'Accept-Encoding': 'gzip,deflate,sdch', 'Host': '127.0.0.1:8000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.143 Safari/537.36', 'Connection': 'keep-alive', 'Referer': 'http://127.0.0.1:8000/', 'Cookie': '_xsrf=cfa58af238304fdeb0636e0c1fff771f; sessionid=21d13d35484ed57f9ac192eba5fab18c; csrftoken=5D5XjI4YXU7qu0ghNYhaLVIv8vXX4Dlv; PYCKET_ID=ZGViOTlkZmItNjgzNS00N2QyLTgwZmQtOTRmN2M2NWE3YjU5|1409055872|c9aebc1abdb0215c844a6fd87b39b55f072bfefb'})
+Traceback (most recent call last):
+  File "/home/kpx/evomailing/oblachko/env/local/lib/python2.7/site-packages/tornado/web.py", line 1141, in _when_complete
+    callback()
+  File "/home/kpx/evomailing/oblachko/env/local/lib/python2.7/site-packages/tornado/web.py", line 1162, in _execute_method
+    self._when_complete(method(*self.path_args, **self.path_kwargs),
+  File "/home/kpx/evomailing/oblachko/handlers/basehandler.py", line 69, in get
+    self.context.update(filter_list(RecordDB, self.page, self.filter_dict))
+  File "/home/kpx/evomailing/oblachko/handlers/common.py", line 83, in filter_list
+    items = get_list(module, page, filter)
+  File "/home/kpx/evomailing/oblachko/handlers/common.py", line 16, in get_list
+    items = [db_model.get_middle(x.id) for x in cursor.skip(page * PER_PAGE).limit(PER_PAGE)]
+  File "/home/kpx/evomailing/oblachko/env/local/lib/python2.7/site-packages/mongolite/cursor.py", line 43, in next
+    if len(self.__data) or self._refresh():
+  File "/home/kpx/evomailing/oblachko/env/local/lib/python2.7/site-packages/pymongo/cursor.py", line 763, in _refresh
+    self.__uuid_subtype))
+  File "/home/kpx/evomailing/oblachko/env/local/lib/python2.7/site-packages/pymongo/cursor.py", line 720, in __send_message
+    self.__uuid_subtype)
+  File "/home/kpx/evomailing/oblachko/env/local/lib/python2.7/site-packages/pymongo/helpers.py", line 100, in _unpack_response
+    error_object["$err"])
+OperationFailure: database error: too much data for sort() with no index.  add an index or specify a smaller limit
+ERROR        web.py                   [LINE:1635][2014-08-29 17:10:33]  500 GET /?page=3609 (127.0.0.1) 670.32ms
+DEBUG        common.py                [LINE:15][2014-08-29 17:11:02]  Выбрано из БД: 200 - 250
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:03]  200 GET /?page=5 (127.0.0.1) 1426.33ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:04]  304 GET /static/css/bootstrap.css (127.0.0.1) 1.11ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:04]  304 GET /static/css/animate.css (127.0.0.1) 1.00ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:04]  304 GET /static/css/font-awesome.min.css (127.0.0.1) 1.09ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:04]  304 GET /static/css/font.css (127.0.0.1) 1.00ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:04]  304 GET /static/css/plugin.css (127.0.0.1) 0.95ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:04]  304 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 0.94ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:04]  304 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 1.38ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:04]  304 GET /static/js/jquery.min.js (127.0.0.1) 2.20ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:04]  304 GET /static/css/app.css (127.0.0.1) 3.40ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:04]  304 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 2.15ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:04]  304 GET /static/js/bootstrap.js (127.0.0.1) 2.09ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:04]  304 GET /static/js/app.js (127.0.0.1) 2.76ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:04]  304 GET /static/js/app.plugin.js (127.0.0.1) 2.68ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:04]  304 GET /static/js/app.data.js (127.0.0.1) 2.62ms
+DEBUG        common.py                [LINE:15][2014-08-29 17:11:16]  Выбрано из БД: 2200 - 2250
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:17]  200 GET /?page=45 (127.0.0.1) 1194.49ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:18]  304 GET /static/css/bootstrap.css (127.0.0.1) 0.98ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:18]  304 GET /static/css/animate.css (127.0.0.1) 1.05ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:18]  304 GET /static/css/font-awesome.min.css (127.0.0.1) 1.39ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:18]  304 GET /static/css/font.css (127.0.0.1) 1.11ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:18]  304 GET /static/css/app.css (127.0.0.1) 0.97ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:18]  304 GET /static/css/plugin.css (127.0.0.1) 0.94ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:18]  304 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 1.53ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:18]  304 GET /static/js/jquery.min.js (127.0.0.1) 2.19ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:18]  304 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 1.68ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:18]  304 GET /static/js/bootstrap.js (127.0.0.1) 2.57ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:18]  304 GET /static/js/app.js (127.0.0.1) 1.74ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:18]  304 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 1.91ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:18]  304 GET /static/js/app.plugin.js (127.0.0.1) 1.56ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:18]  304 GET /static/js/app.data.js (127.0.0.1) 2.11ms
+DEBUG        common.py                [LINE:15][2014-08-29 17:11:33]  Выбрано из БД: 2200 - 2250
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:35]  200 GET /?page=45 (127.0.0.1) 1239.75ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:35]  200 GET /static/css/bootstrap.css (127.0.0.1) 2.66ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:35]  200 GET /static/css/app.css (127.0.0.1) 1.28ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:35]  200 GET /static/css/plugin.css (127.0.0.1) 0.76ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:35]  200 GET /static/css/font.css (127.0.0.1) 1.07ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:35]  200 GET /static/css/font-awesome.min.css (127.0.0.1) 2.52ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:35]  200 GET /static/css/animate.css (127.0.0.1) 1.08ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:35]  200 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 2.40ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:35]  200 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 3.00ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:35]  200 GET /static/js/bootstrap.js (127.0.0.1) 1.36ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:35]  200 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 1.06ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:35]  200 GET /static/js/jquery.min.js (127.0.0.1) 1.08ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:35]  200 GET /static/js/app.js (127.0.0.1) 1.15ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:35]  200 GET /static/js/app.plugin.js (127.0.0.1) 2.03ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:35]  200 GET /static/js/app.data.js (127.0.0.1) 1.70ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:35]  200 GET /static/fonts/opensans/opensans-bold.woff (127.0.0.1) 1.47ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:35]  200 GET /static/fonts/fontawesome-webfont.woff?v=4.0.3 (127.0.0.1) 1.88ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:35]  200 GET /static/fonts/opensans/opensans.woff (127.0.0.1) 1.13ms
+WARNING      web.py                   [LINE:1635][2014-08-29 17:11:37]  404 GET /favicon.ico (127.0.0.1) 1.15ms
+DEBUG        common.py                [LINE:15][2014-08-29 17:11:54]  Выбрано из БД: 2200 - 2250
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:55]  200 GET /?page=45 (127.0.0.1) 1164.62ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:55]  200 GET /static/css/bootstrap.css (127.0.0.1) 1.90ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:55]  200 GET /static/css/font-awesome.min.css (127.0.0.1) 1.33ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:55]  200 GET /static/css/app.css (127.0.0.1) 2.11ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:55]  200 GET /static/css/font.css (127.0.0.1) 1.62ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:55]  200 GET /static/css/plugin.css (127.0.0.1) 1.17ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:55]  200 GET /static/css/animate.css (127.0.0.1) 1.28ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:55]  200 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 1.50ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:55]  200 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 1.27ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:55]  200 GET /static/js/jquery.min.js (127.0.0.1) 1.15ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:55]  200 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 1.73ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:55]  200 GET /static/js/app.js (127.0.0.1) 1.01ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:55]  200 GET /static/js/bootstrap.js (127.0.0.1) 1.58ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:55]  200 GET /static/js/app.plugin.js (127.0.0.1) 1.23ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:55]  200 GET /static/js/app.data.js (127.0.0.1) 1.15ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:56]  200 GET /static/fonts/opensans/opensans-bold.woff (127.0.0.1) 1.31ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:56]  200 GET /static/fonts/fontawesome-webfont.woff?v=4.0.3 (127.0.0.1) 1.97ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:11:56]  200 GET /static/fonts/opensans/opensans.woff (127.0.0.1) 1.18ms
+WARNING      web.py                   [LINE:1635][2014-08-29 17:11:58]  404 GET /favicon.ico (127.0.0.1) 1.10ms
+DEBUG        common.py                [LINE:15][2014-08-29 17:12:04]  Выбрано из БД: 2200 - 2250
+INFO         web.py                   [LINE:1635][2014-08-29 17:12:06]  200 GET /?page=45 (127.0.0.1) 1613.25ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:12:06]  200 GET /static/css/bootstrap.css (127.0.0.1) 1.72ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:12:06]  200 GET /static/css/animate.css (127.0.0.1) 1.28ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:12:06]  200 GET /static/css/font-awesome.min.css (127.0.0.1) 1.39ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:12:06]  200 GET /static/css/plugin.css (127.0.0.1) 1.85ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:12:06]  200 GET /static/css/app.css (127.0.0.1) 1.32ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:12:06]  200 GET /static/css/font.css (127.0.0.1) 1.58ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:12:06]  200 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 1.18ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:12:06]  200 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 1.32ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:12:06]  200 GET /static/js/jquery.min.js (127.0.0.1) 1.28ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:12:06]  200 GET /static/js/bootstrap.js (127.0.0.1) 1.21ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:12:06]  200 GET /static/js/app.js (127.0.0.1) 1.20ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:12:06]  200 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 1.18ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:12:06]  200 GET /static/js/app.plugin.js (127.0.0.1) 1.08ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:12:06]  200 GET /static/js/app.data.js (127.0.0.1) 1.08ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:12:06]  200 GET /static/fonts/opensans/opensans-bold.woff (127.0.0.1) 1.27ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:12:06]  200 GET /static/fonts/opensans/opensans.woff (127.0.0.1) 1.14ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:12:06]  200 GET /static/fonts/fontawesome-webfont.woff?v=4.0.3 (127.0.0.1) 1.57ms
+WARNING      web.py                   [LINE:1635][2014-08-29 17:12:09]  404 GET /favicon.ico (127.0.0.1) 1.06ms
+WARNING      web.py                   [LINE:1635][2014-08-29 17:12:12]  404 GET /static/js/jquery-1.10.2.min.map (127.0.0.1) 1.25ms
+WARNING      web.py                   [LINE:1635][2014-08-29 17:12:12]  404 GET /static/css/bootstrap.css.map (127.0.0.1) 0.93ms
+DEBUG        common.py                [LINE:15][2014-08-29 17:49:26]  Выбрано из БД: 2200 - 2250
+INFO         web.py                   [LINE:1635][2014-08-29 17:49:28]  200 GET /?page=45 (127.0.0.1) 1925.08ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:49:29]  304 GET /static/css/bootstrap.css (127.0.0.1) 1.10ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:49:29]  304 GET /static/css/animate.css (127.0.0.1) 1.05ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:49:29]  304 GET /static/css/font-awesome.min.css (127.0.0.1) 0.97ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:49:29]  304 GET /static/css/font.css (127.0.0.1) 0.94ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:49:29]  304 GET /static/css/plugin.css (127.0.0.1) 0.93ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:49:29]  304 GET /static/css/app.css (127.0.0.1) 1.10ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:49:29]  304 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 2.96ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:49:29]  304 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 1.23ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:49:29]  304 GET /static/js/jquery.min.js (127.0.0.1) 1.39ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:49:29]  304 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 1.02ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:49:29]  304 GET /static/js/bootstrap.js (127.0.0.1) 0.87ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:49:29]  304 GET /static/js/app.js (127.0.0.1) 1.00ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:49:29]  304 GET /static/js/app.plugin.js (127.0.0.1) 1.37ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:49:29]  304 GET /static/js/app.data.js (127.0.0.1) 1.00ms
+DEBUG        common.py                [LINE:15][2014-08-29 17:53:10]  Выбрано из БД: 2200 - 2250
+INFO         web.py                   [LINE:1635][2014-08-29 17:53:12]  200 GET /?page=45 (127.0.0.1) 1486.99ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:53:12]  304 GET /static/css/bootstrap.css (127.0.0.1) 1.13ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:53:12]  304 GET /static/css/animate.css (127.0.0.1) 1.02ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:53:12]  304 GET /static/css/font-awesome.min.css (127.0.0.1) 1.13ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:53:13]  304 GET /static/css/font.css (127.0.0.1) 1.08ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:53:13]  304 GET /static/css/plugin.css (127.0.0.1) 0.97ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:53:13]  304 GET /static/css/app.css (127.0.0.1) 1.03ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:53:13]  304 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 0.98ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:53:13]  304 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 1.59ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:53:13]  304 GET /static/js/jquery.min.js (127.0.0.1) 1.54ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:53:13]  304 GET /static/js/app.js (127.0.0.1) 2.49ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:53:13]  304 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 2.12ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:53:13]  304 GET /static/js/bootstrap.js (127.0.0.1) 2.39ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:53:13]  304 GET /static/js/app.plugin.js (127.0.0.1) 3.67ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:53:13]  304 GET /static/js/app.data.js (127.0.0.1) 2.38ms
+DEBUG        common.py                [LINE:15][2014-08-29 17:53:46]  Выбрано из БД: 2200 - 2250
+INFO         web.py                   [LINE:1635][2014-08-29 17:53:47]  200 GET /?page=45 (127.0.0.1) 1444.12ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:53:48]  200 GET /static/css/bootstrap.css (127.0.0.1) 2.67ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:53:48]  200 GET /static/css/app.css (127.0.0.1) 2.09ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:53:48]  200 GET /static/css/plugin.css (127.0.0.1) 1.58ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:53:48]  200 GET /static/css/font.css (127.0.0.1) 1.48ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:53:48]  200 GET /static/css/font-awesome.min.css (127.0.0.1) 1.63ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:53:48]  200 GET /static/css/animate.css (127.0.0.1) 2.07ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:53:48]  200 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 3.66ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:53:48]  200 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 1.66ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:53:48]  200 GET /static/js/jquery.min.js (127.0.0.1) 3.10ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:53:48]  200 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 1.71ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:53:48]  200 GET /static/js/bootstrap.js (127.0.0.1) 1.85ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:53:48]  200 GET /static/js/app.js (127.0.0.1) 2.40ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:53:48]  200 GET /static/js/app.plugin.js (127.0.0.1) 1.89ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:53:48]  200 GET /static/js/app.data.js (127.0.0.1) 1.69ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:53:48]  200 GET /static/fonts/opensans/opensans-bold.woff (127.0.0.1) 4.23ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:53:48]  200 GET /static/fonts/fontawesome-webfont.woff?v=4.0.3 (127.0.0.1) 3.25ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:53:48]  200 GET /static/fonts/opensans/opensans.woff (127.0.0.1) 2.12ms
+WARNING      web.py                   [LINE:1635][2014-08-29 17:53:51]  404 GET /favicon.ico (127.0.0.1) 2.11ms
+DEBUG        common.py                [LINE:15][2014-08-29 17:56:36]  Выбрано из БД: 2200 - 2250
+INFO         web.py                   [LINE:1635][2014-08-29 17:56:38]  200 GET /?page=45 (127.0.0.1) 1063.09ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:56:38]  304 GET /static/css/bootstrap.css (127.0.0.1) 0.95ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:56:38]  304 GET /static/css/animate.css (127.0.0.1) 1.14ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:56:38]  304 GET /static/css/font-awesome.min.css (127.0.0.1) 1.06ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:56:38]  304 GET /static/js/jquery.min.js (127.0.0.1) 0.96ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:56:38]  304 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 1.54ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:56:38]  304 GET /static/css/app.css (127.0.0.1) 1.04ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:56:38]  304 GET /static/css/plugin.css (127.0.0.1) 0.96ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:56:38]  304 GET /static/css/font.css (127.0.0.1) 1.59ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:56:38]  304 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 1.22ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:56:38]  304 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 0.97ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:56:38]  304 GET /static/js/bootstrap.js (127.0.0.1) 0.93ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:56:38]  304 GET /static/js/app.js (127.0.0.1) 0.92ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:56:38]  304 GET /static/js/app.plugin.js (127.0.0.1) 0.97ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:56:38]  304 GET /static/js/app.data.js (127.0.0.1) 0.94ms
+DEBUG        common.py                [LINE:15][2014-08-29 17:57:53]  Выбрано из БД: 2200 - 2250
+INFO         web.py                   [LINE:1635][2014-08-29 17:57:54]  200 GET /?page=45 (127.0.0.1) 1092.79ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:57:55]  200 GET /static/css/bootstrap.css (127.0.0.1) 1.40ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:57:55]  200 GET /static/css/app.css (127.0.0.1) 1.09ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:57:55]  200 GET /static/css/plugin.css (127.0.0.1) 1.01ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:57:55]  200 GET /static/css/font.css (127.0.0.1) 0.98ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:57:55]  200 GET /static/css/font-awesome.min.css (127.0.0.1) 1.00ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:57:55]  200 GET /static/css/animate.css (127.0.0.1) 1.08ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:57:55]  200 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 3.45ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:57:55]  200 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 1.40ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:57:55]  200 GET /static/js/jquery.min.js (127.0.0.1) 1.26ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:57:55]  200 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 1.48ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:57:55]  200 GET /static/js/bootstrap.js (127.0.0.1) 1.17ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:57:55]  200 GET /static/js/app.js (127.0.0.1) 1.07ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:57:55]  200 GET /static/js/app.plugin.js (127.0.0.1) 1.95ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:57:55]  200 GET /static/js/app.data.js (127.0.0.1) 1.10ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:57:55]  200 GET /static/fonts/opensans/opensans-bold.woff (127.0.0.1) 1.11ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:57:55]  200 GET /static/fonts/fontawesome-webfont.woff?v=4.0.3 (127.0.0.1) 1.32ms
+INFO         web.py                   [LINE:1635][2014-08-29 17:57:55]  200 GET /static/fonts/opensans/opensans.woff (127.0.0.1) 1.17ms
+WARNING      web.py                   [LINE:1635][2014-08-29 17:57:58]  404 GET /favicon.ico (127.0.0.1) 1.09ms
+DEBUG        common.py                [LINE:15][2014-08-29 18:00:07]  Выбрано из БД: 2200 - 2250
+INFO         web.py                   [LINE:1635][2014-08-29 18:00:08]  200 GET /?page=45 (127.0.0.1) 1225.62ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:00:08]  200 GET /static/css/bootstrap.css (127.0.0.1) 1.91ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:00:08]  200 GET /static/css/animate.css (127.0.0.1) 1.96ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:00:08]  200 GET /static/css/font.css (127.0.0.1) 1.39ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:00:08]  200 GET /static/css/font-awesome.min.css (127.0.0.1) 1.44ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:00:08]  200 GET /static/css/plugin.css (127.0.0.1) 1.07ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:00:08]  200 GET /static/css/app.css (127.0.0.1) 1.07ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:00:08]  200 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 0.99ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:00:08]  200 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 1.12ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:00:08]  200 GET /static/js/jquery.min.js (127.0.0.1) 2.52ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:00:08]  200 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 1.68ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:00:08]  200 GET /static/js/bootstrap.js (127.0.0.1) 1.34ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:00:08]  200 GET /static/js/app.js (127.0.0.1) 1.66ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:00:08]  200 GET /static/js/app.plugin.js (127.0.0.1) 1.32ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:00:08]  200 GET /static/js/app.data.js (127.0.0.1) 1.97ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:00:09]  200 GET /static/fonts/opensans/opensans-bold.woff (127.0.0.1) 1.22ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:00:09]  200 GET /static/fonts/fontawesome-webfont.woff?v=4.0.3 (127.0.0.1) 1.67ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:00:09]  200 GET /static/fonts/opensans/opensans.woff (127.0.0.1) 1.19ms
+WARNING      web.py                   [LINE:1635][2014-08-29 18:00:11]  404 GET /favicon.ico (127.0.0.1) 0.75ms
+WARNING      web.py                   [LINE:1635][2014-08-29 18:00:16]  404 GET /static/js/jquery-1.10.2.min.map (127.0.0.1) 0.97ms
+WARNING      web.py                   [LINE:1635][2014-08-29 18:00:16]  404 GET /static/css/bootstrap.css.map (127.0.0.1) 0.94ms
+INFO         base.py                  [LINE:13][2014-08-29 18:01:04]  Работаем с базой данных evo_dev.
+DEBUG        common.py                [LINE:15][2014-08-29 18:01:05]  Выбрано из БД: 2200 - 2250
+INFO         web.py                   [LINE:1635][2014-08-29 18:01:07]  200 GET /?page=45 (127.0.0.1) 1918.66ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:01:08]  200 GET /static/css/bootstrap.css (127.0.0.1) 18.72ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:01:08]  200 GET /static/css/animate.css (127.0.0.1) 1.63ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:01:08]  200 GET /static/css/font-awesome.min.css (127.0.0.1) 1.32ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:01:08]  200 GET /static/css/font.css (127.0.0.1) 1.09ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:01:08]  200 GET /static/css/plugin.css (127.0.0.1) 1.30ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:01:08]  200 GET /static/css/app.css (127.0.0.1) 1.50ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:01:08]  200 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 1.84ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:01:08]  200 GET /static/js/jquery.min.js (127.0.0.1) 1.89ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:01:08]  200 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 1.15ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:01:08]  200 GET /static/js/app.plugin.js (127.0.0.1) 1.84ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:01:08]  200 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 1.45ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:01:08]  200 GET /static/js/bootstrap.js (127.0.0.1) 1.76ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:01:08]  200 GET /static/js/app.js (127.0.0.1) 1.23ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:01:08]  200 GET /static/js/app.data.js (127.0.0.1) 1.55ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:01:09]  200 GET /static/fonts/opensans/opensans-bold.woff (127.0.0.1) 1.41ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:01:09]  200 GET /static/fonts/fontawesome-webfont.woff?v=4.0.3 (127.0.0.1) 2.95ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:01:09]  200 GET /static/fonts/opensans/opensans.woff (127.0.0.1) 2.06ms
+WARNING      web.py                   [LINE:1635][2014-08-29 18:01:12]  404 GET /favicon.ico (127.0.0.1) 0.96ms
+DEBUG        common.py                [LINE:15][2014-08-29 18:02:32]  Выбрано из БД: 2200 - 2250
+INFO         web.py                   [LINE:1635][2014-08-29 18:02:34]  200 GET /?page=45 (127.0.0.1) 1651.31ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:02:34]  200 GET /static/css/bootstrap.css (127.0.0.1) 1.61ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:02:34]  200 GET /static/css/animate.css (127.0.0.1) 1.21ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:02:34]  200 GET /static/css/font-awesome.min.css (127.0.0.1) 1.12ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:02:34]  200 GET /static/css/font.css (127.0.0.1) 1.04ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:02:34]  200 GET /static/css/plugin.css (127.0.0.1) 1.09ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:02:34]  200 GET /static/css/app.css (127.0.0.1) 1.07ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:02:34]  200 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 1.55ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:02:34]  200 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 1.43ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:02:34]  200 GET /static/js/jquery.min.js (127.0.0.1) 1.38ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:02:34]  200 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 1.22ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:02:34]  200 GET /static/js/bootstrap.js (127.0.0.1) 1.17ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:02:34]  200 GET /static/js/app.js (127.0.0.1) 0.99ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:02:34]  200 GET /static/js/app.plugin.js (127.0.0.1) 1.31ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:02:34]  200 GET /static/js/app.data.js (127.0.0.1) 1.37ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:02:35]  200 GET /static/fonts/opensans/opensans-bold.woff (127.0.0.1) 1.20ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:02:35]  200 GET /static/fonts/fontawesome-webfont.woff?v=4.0.3 (127.0.0.1) 2.05ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:02:35]  200 GET /static/fonts/opensans/opensans.woff (127.0.0.1) 1.77ms
+WARNING      web.py                   [LINE:1635][2014-08-29 18:02:37]  404 GET /favicon.ico (127.0.0.1) 0.93ms
+DEBUG        common.py                [LINE:15][2014-08-29 18:02:42]  Выбрано из БД: 2200 - 2250
+INFO         web.py                   [LINE:1635][2014-08-29 18:02:43]  200 GET /?page=45 (127.0.0.1) 1657.52ms
+DEBUG        common.py                [LINE:15][2014-08-29 18:04:50]  Выбрано из БД: 2200 - 2250
+INFO         web.py                   [LINE:1635][2014-08-29 18:04:52]  200 GET /?page=45 (127.0.0.1) 1441.44ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:04:52]  200 GET /static/css/bootstrap.css (127.0.0.1) 1.66ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:04:52]  200 GET /static/css/animate.css (127.0.0.1) 1.18ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:04:52]  200 GET /static/css/font-awesome.min.css (127.0.0.1) 1.21ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:04:52]  200 GET /static/css/font.css (127.0.0.1) 1.35ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:04:52]  200 GET /static/css/plugin.css (127.0.0.1) 1.22ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:04:52]  200 GET /static/js/jquery.min.js (127.0.0.1) 1.53ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:04:52]  200 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 1.44ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:04:52]  200 GET /static/css/app.css (127.0.0.1) 4.43ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:04:52]  200 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 1.12ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:04:52]  200 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 1.53ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:04:52]  200 GET /static/js/bootstrap.js (127.0.0.1) 2.18ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:04:52]  200 GET /static/js/app.js (127.0.0.1) 1.51ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:04:52]  200 GET /static/js/app.plugin.js (127.0.0.1) 1.15ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:04:52]  200 GET /static/js/app.data.js (127.0.0.1) 1.14ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:04:53]  200 GET /static/fonts/opensans/opensans-bold.woff (127.0.0.1) 1.21ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:04:53]  200 GET /static/fonts/fontawesome-webfont.woff?v=4.0.3 (127.0.0.1) 1.37ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:04:53]  200 GET /static/fonts/opensans/opensans.woff (127.0.0.1) 1.17ms
+WARNING      web.py                   [LINE:1635][2014-08-29 18:04:56]  404 GET /favicon.ico (127.0.0.1) 1.07ms
+DEBUG        common.py                [LINE:15][2014-08-29 18:08:10]  Выбрано из БД: 2200 - 2250
+INFO         web.py                   [LINE:1635][2014-08-29 18:08:11]  200 GET /?page=45 (127.0.0.1) 1260.04ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:08:11]  304 GET /static/css/bootstrap.css (127.0.0.1) 1.14ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:08:11]  304 GET /static/css/animate.css (127.0.0.1) 0.99ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:08:11]  304 GET /static/css/font-awesome.min.css (127.0.0.1) 0.96ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:08:11]  304 GET /static/css/font.css (127.0.0.1) 0.97ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:08:11]  304 GET /static/css/plugin.css (127.0.0.1) 1.17ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:08:11]  304 GET /static/css/app.css (127.0.0.1) 1.49ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:08:11]  304 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 1.13ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:08:11]  304 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 1.05ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:08:11]  304 GET /static/js/jquery.min.js (127.0.0.1) 1.50ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:08:11]  304 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 1.46ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:08:11]  304 GET /static/js/bootstrap.js (127.0.0.1) 1.02ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:08:11]  304 GET /static/js/app.js (127.0.0.1) 1.39ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:08:11]  304 GET /static/js/app.plugin.js (127.0.0.1) 1.04ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:08:11]  304 GET /static/js/app.data.js (127.0.0.1) 1.07ms
+DEBUG        common.py                [LINE:15][2014-08-29 18:08:19]  Выбрано из БД: 0 - 50
+INFO         web.py                   [LINE:1635][2014-08-29 18:08:20]  200 GET /?otrasl=sss&_xsrf=cfa58af238304fdeb0636e0c1fff771f (127.0.0.1) 1260.22ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:08:21]  304 GET /static/css/bootstrap.css (127.0.0.1) 1.07ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:08:21]  304 GET /static/css/animate.css (127.0.0.1) 1.82ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:08:21]  304 GET /static/js/jquery.min.js (127.0.0.1) 0.98ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:08:21]  304 GET /static/css/app.css (127.0.0.1) 1.02ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:08:21]  304 GET /static/css/font-awesome.min.css (127.0.0.1) 0.95ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:08:21]  304 GET /static/css/plugin.css (127.0.0.1) 1.17ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:08:21]  304 GET /static/css/font.css (127.0.0.1) 0.96ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:08:21]  304 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 1.47ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:08:21]  304 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 1.01ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:08:21]  304 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 1.04ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:08:21]  304 GET /static/js/bootstrap.js (127.0.0.1) 0.90ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:08:21]  304 GET /static/js/app.js (127.0.0.1) 0.93ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:08:21]  304 GET /static/js/app.plugin.js (127.0.0.1) 0.95ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:08:21]  304 GET /static/js/app.data.js (127.0.0.1) 0.95ms
+DEBUG        common.py                [LINE:15][2014-08-29 18:08:44]  Выбрано из БД: 0 - 50
+INFO         web.py                   [LINE:1635][2014-08-29 18:08:45]  200 GET /?otrasl=%D1%84%D1%8B%D0%B2%D0%B0+%D0%B0%D0%B0%D0%B0%D0%B0%D0%B0+%D1%87%D1%81%D0%BC%D0%BC&_xsrf=cfa58af238304fdeb0636e0c1fff771f (127.0.0.1) 1683.13ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:08:46]  304 GET /static/css/bootstrap.css (127.0.0.1) 0.99ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:08:46]  304 GET /static/css/animate.css (127.0.0.1) 1.91ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:08:46]  304 GET /static/css/font-awesome.min.css (127.0.0.1) 0.98ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:08:46]  304 GET /static/css/font.css (127.0.0.1) 0.95ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:08:46]  304 GET /static/css/plugin.css (127.0.0.1) 1.40ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:08:46]  304 GET /static/css/app.css (127.0.0.1) 0.98ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:08:46]  304 GET /static/js/jquery.min.js (127.0.0.1) 1.33ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:08:46]  304 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 1.07ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:08:46]  304 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 1.10ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:08:46]  304 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 1.81ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:08:46]  304 GET /static/js/bootstrap.js (127.0.0.1) 1.27ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:08:46]  304 GET /static/js/app.js (127.0.0.1) 1.27ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:08:46]  304 GET /static/js/app.plugin.js (127.0.0.1) 0.95ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:08:46]  304 GET /static/js/app.data.js (127.0.0.1) 1.01ms
+DEBUG        common.py                [LINE:15][2014-08-29 18:10:37]  Выбрано из БД: 0 - 50
+INFO         web.py                   [LINE:1635][2014-08-29 18:10:38]  200 GET /?otrasl=%D1%84%D1%8B%D0%B2%D0%B0+%D0%B0%D0%B0%D0%B0%D0%B0%D0%B0+%D1%87%D1%81%D0%BC%D0%BC&_xsrf=cfa58af238304fdeb0636e0c1fff771f (127.0.0.1) 1255.33ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:10:39]  200 GET /static/css/bootstrap.css (127.0.0.1) 1.60ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:10:39]  200 GET /static/css/app.css (127.0.0.1) 1.25ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:10:39]  200 GET /static/css/font.css (127.0.0.1) 1.40ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:10:39]  200 GET /static/css/animate.css (127.0.0.1) 1.38ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:10:39]  200 GET /static/css/font-awesome.min.css (127.0.0.1) 0.98ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:10:39]  200 GET /static/css/plugin.css (127.0.0.1) 1.20ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:10:39]  200 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 1.64ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:10:39]  200 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 1.16ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:10:39]  200 GET /static/js/jquery.min.js (127.0.0.1) 1.26ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:10:39]  200 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 1.20ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:10:39]  200 GET /static/js/app.js (127.0.0.1) 1.12ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:10:39]  200 GET /static/js/app.plugin.js (127.0.0.1) 1.76ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:10:39]  200 GET /static/js/bootstrap.js (127.0.0.1) 1.20ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:10:39]  200 GET /static/js/app.data.js (127.0.0.1) 1.34ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:10:39]  200 GET /static/fonts/opensans/opensans-bold.woff (127.0.0.1) 1.24ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:10:39]  200 GET /static/fonts/fontawesome-webfont.woff?v=4.0.3 (127.0.0.1) 1.37ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:10:39]  200 GET /static/fonts/opensans/opensans.woff (127.0.0.1) 1.18ms
+WARNING      web.py                   [LINE:1635][2014-08-29 18:10:42]  404 GET /favicon.ico (127.0.0.1) 1.63ms
+DEBUG        common.py                [LINE:15][2014-08-29 18:10:54]  Выбрано из БД: 0 - 50
+INFO         web.py                   [LINE:1635][2014-08-29 18:10:55]  200 GET /?otrasl=%D1%8B%D0%B2%D0%B0+%D0%B0%D0%B0%D0%B0%D0%B0%D0%B0&otrasl=%D1%87%D1%87%D1%87%D1%87%D1%87%D1%87%D0%BC+%D1%8B%D0%B2%D0%B0 (127.0.0.1) 943.24ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:10:55]  304 GET /static/css/bootstrap.css (127.0.0.1) 1.11ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:10:55]  304 GET /static/css/animate.css (127.0.0.1) 1.37ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:10:55]  304 GET /static/css/font-awesome.min.css (127.0.0.1) 2.72ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:10:55]  304 GET /static/css/app.css (127.0.0.1) 2.62ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:10:55]  304 GET /static/css/plugin.css (127.0.0.1) 1.32ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:10:55]  304 GET /static/css/font.css (127.0.0.1) 0.80ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:10:55]  304 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 0.82ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:10:55]  304 GET /static/js/jquery.min.js (127.0.0.1) 1.00ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:10:55]  304 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 1.02ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:10:55]  304 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 0.98ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:10:55]  304 GET /static/js/bootstrap.js (127.0.0.1) 1.72ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:10:55]  304 GET /static/js/app.js (127.0.0.1) 1.33ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:10:55]  304 GET /static/js/app.plugin.js (127.0.0.1) 0.97ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:10:55]  304 GET /static/js/app.data.js (127.0.0.1) 0.94ms
+DEBUG        common.py                [LINE:15][2014-08-29 18:13:42]  Выбрано из БД: 0 - 50
+INFO         web.py                   [LINE:1635][2014-08-29 18:13:44]  200 GET /?otrasl=%D1%8B%D0%B2%D0%B0+%D0%B0%D0%B0%D0%B0%D0%B0%D0%B0&otrasl=%D1%87%D1%87%D1%87%D1%87%D1%87%D1%87%D0%BC+%D1%8B%D0%B2%D0%B0 (127.0.0.1) 1842.75ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:13:44]  304 GET /static/css/bootstrap.css (127.0.0.1) 1.19ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:13:44]  304 GET /static/css/animate.css (127.0.0.1) 1.52ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:13:44]  304 GET /static/css/font-awesome.min.css (127.0.0.1) 1.02ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:13:44]  304 GET /static/css/font.css (127.0.0.1) 0.94ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:13:44]  304 GET /static/css/plugin.css (127.0.0.1) 0.91ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:13:44]  304 GET /static/css/app.css (127.0.0.1) 0.90ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:13:44]  304 GET /static/js/jquery.min.js (127.0.0.1) 0.98ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:13:44]  304 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 1.02ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:13:44]  304 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 1.51ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:13:44]  304 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 1.07ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:13:44]  304 GET /static/js/bootstrap.js (127.0.0.1) 1.03ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:13:44]  304 GET /static/js/app.js (127.0.0.1) 0.93ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:13:44]  304 GET /static/js/app.plugin.js (127.0.0.1) 0.95ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:13:44]  304 GET /static/js/app.data.js (127.0.0.1) 1.01ms
+DEBUG        common.py                [LINE:15][2014-08-29 18:13:59]  Выбрано из БД: 0 - 50
+INFO         web.py                   [LINE:1635][2014-08-29 18:14:00]  200 GET /?otrasl=dddddxsdf+%D0%B2%D0%B0%D1%8B%D0%B2%D0%B0&okved=%D1%8B%D0%B0%D0%B0%D0%B0+%D1%8B%D0%B2%D0%B0%D0%B0 (127.0.0.1) 1623.03ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:14:01]  304 GET /static/css/bootstrap.css (127.0.0.1) 1.06ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:14:01]  304 GET /static/css/animate.css (127.0.0.1) 1.00ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:14:01]  304 GET /static/css/font-awesome.min.css (127.0.0.1) 1.02ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:14:01]  304 GET /static/css/font.css (127.0.0.1) 1.08ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:14:01]  304 GET /static/css/plugin.css (127.0.0.1) 1.04ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:14:01]  304 GET /static/css/app.css (127.0.0.1) 1.02ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:14:01]  304 GET /static/js/jquery.min.js (127.0.0.1) 0.99ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:14:01]  304 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 1.05ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:14:01]  304 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 1.26ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:14:01]  304 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 1.09ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:14:01]  304 GET /static/js/bootstrap.js (127.0.0.1) 1.32ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:14:01]  304 GET /static/js/app.js (127.0.0.1) 1.06ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:14:01]  304 GET /static/js/app.plugin.js (127.0.0.1) 1.87ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:14:01]  304 GET /static/js/app.data.js (127.0.0.1) 1.06ms
+DEBUG        common.py                [LINE:15][2014-08-29 18:14:40]  Выбрано из БД: 0 - 50
+INFO         web.py                   [LINE:1635][2014-08-29 18:14:41]  200 GET /?otrasl=dddddxsdf+%D0%B2%D0%B0%D1%8B%D0%B2%D0%B0&okved=%D1%8B%D0%B0%D0%B0%D0%B0+%D1%8B%D0%B2%D0%B0%D0%B0 (127.0.0.1) 1492.55ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:14:41]  304 GET /static/css/bootstrap.css (127.0.0.1) 1.05ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:14:41]  304 GET /static/css/animate.css (127.0.0.1) 0.99ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:14:41]  304 GET /static/css/font-awesome.min.css (127.0.0.1) 1.07ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:14:41]  304 GET /static/css/font.css (127.0.0.1) 1.03ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:14:41]  304 GET /static/css/plugin.css (127.0.0.1) 1.05ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:14:41]  304 GET /static/css/app.css (127.0.0.1) 1.01ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:14:42]  304 GET /static/js/jquery.min.js (127.0.0.1) 1.01ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:14:42]  304 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 1.00ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:14:42]  304 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 0.96ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:14:42]  304 GET /static/js/bootstrap.js (127.0.0.1) 0.87ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:14:42]  304 GET /static/js/app.js (127.0.0.1) 0.92ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:14:42]  304 GET /static/js/app.plugin.js (127.0.0.1) 0.91ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:14:42]  304 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 5.26ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:14:42]  304 GET /static/js/app.data.js (127.0.0.1) 1.27ms
+DEBUG        common.py                [LINE:15][2014-08-29 18:15:25]  Выбрано из БД: 0 - 50
+INFO         web.py                   [LINE:1635][2014-08-29 18:15:27]  200 GET /?otrasl=dddddxsdf+%D0%B2%D0%B0%D1%8B%D0%B2%D0%B0&okved=%D1%8B%D0%B0%D0%B0%D0%B0+%D1%8B%D0%B2%D0%B0%D0%B0 (127.0.0.1) 2079.84ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:15:28]  200 GET /static/css/bootstrap.css (127.0.0.1) 1.46ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:15:28]  200 GET /static/css/animate.css (127.0.0.1) 1.27ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:15:28]  200 GET /static/css/app.css (127.0.0.1) 1.77ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:15:28]  200 GET /static/css/plugin.css (127.0.0.1) 1.73ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:15:28]  200 GET /static/css/font.css (127.0.0.1) 5.71ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:15:28]  200 GET /static/css/font-awesome.min.css (127.0.0.1) 1.15ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:15:28]  200 GET /static/lib/pnotify/jquery.pnotify.default.css (127.0.0.1) 1.17ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:15:28]  200 GET /static/lib/pnotify/jquery.pnotify.default.icons.css (127.0.0.1) 1.12ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:15:28]  200 GET /static/js/jquery.min.js (127.0.0.1) 1.39ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:15:28]  200 GET /static/lib/pnotify/jquery.pnotify.js (127.0.0.1) 1.85ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:15:28]  200 GET /static/js/bootstrap.js (127.0.0.1) 2.13ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:15:28]  200 GET /static/js/app.js (127.0.0.1) 1.50ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:15:28]  200 GET /static/js/app.plugin.js (127.0.0.1) 1.15ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:15:28]  200 GET /static/js/app.data.js (127.0.0.1) 1.11ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:15:29]  200 GET /static/fonts/opensans/opensans-bold.woff (127.0.0.1) 1.22ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:15:29]  200 GET /static/fonts/fontawesome-webfont.woff?v=4.0.3 (127.0.0.1) 1.40ms
+INFO         web.py                   [LINE:1635][2014-08-29 18:15:29]  200 GET /static/fonts/opensans/opensans.woff (127.0.0.1) 1.14ms
+WARNING      web.py                   [LINE:1635][2014-08-29 18:15:32]  404 GET /favicon.ico (127.0.0.1) 0.98ms
