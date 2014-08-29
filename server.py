@@ -18,7 +18,7 @@ import settings
 URL_PREFIX = ''
 CURR_PATH = os.path.dirname(os.path.realpath(__file__))
 
-from handlers.basehandler import ListHandler, DetailsHandler
+from handlers.basehandler import ListHandler, DetailsHandler, ExportHandler
 
 class Application(tornado.web.Application):
     def __init__(self):
@@ -26,6 +26,7 @@ class Application(tornado.web.Application):
         req_handlers = [
             (r'/', ListHandler),
             (r'/details/(.*)', DetailsHandler),
+            (r'/export', ExportHandler),
             (r'/static/(.*)', StaticFileHandler, {'path':  CURR_PATH + '/static'}),
             (r'/media/(.*)', StaticFileHandler, {'path': CURR_PATH + '/media'}),
             (r'/ico/(.*)', StaticFileHandler, {'path': CURR_PATH + '/static/images'}),

@@ -2,10 +2,10 @@
 import logging
 import json
 import tornado.web
-from pycket.session import SessionMixin
 from settings import jinja_env
 from common import filter_list
 from models.record import RecordDB
+from sendaction import send_export
 import time
 
 def authorized(method):
@@ -18,7 +18,7 @@ def authorized(method):
         return method(self, *args, **kwargs)
     return wrapper
 
-class BaseHandler(tornado.web.RequestHandler, SessionMixin):
+class BaseHandler(tornado.web.RequestHandler):
     """ Базовый обработчик """
 
     # перезаписанные функции
@@ -69,6 +69,23 @@ class ListHandler(BaseHandler):
 
         self.context.update(filter_list(RecordDB, self.page, self.filter_dict))
         self.render('list.html')
+
+class ExportHandler(BaseHandler):
+
+    def post(self):
+        start_time = time.time()
+        self.filters = {
+            'otrasl': self.get_argument('otrasl', ''),
+            'okved': self.get_argument('okved', ''),
+            'region': self.get_argument('region', ''),
+        }
+
+        self.filter_dict = {}
+        self.filter_dict.update(get_filter_request('otrasl', self.filters['otrasl']))
+        self.filter_dict.update(get_filter_request('okved', self.filters['okved']))
+        self.filter_dict.update(get_filter_request('papka', self.filters['region']))
+        send_export(self.filter_dict, self.get_argument('email', ''))
+        self.redirect('/')
 
 class DetailsHandler(BaseHandler):
     def get(self, record_id):

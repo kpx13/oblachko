@@ -5,7 +5,6 @@ import pytils
 list_fields = [
     u'Папка',
     u'Файл',
-    u'Регион',
 
     u'Наименование',
     u'Полное наименование',
@@ -13,6 +12,7 @@ list_fields = [
     u'Руководитель',
     u'Должность руководителя',
     u'Дата регистрации',
+    u'Регион',
     u'Юридический Адрес',
     u'Фактический адрес',
     u'Телефон',
@@ -33,5 +33,11 @@ list_fields = [
 #for l in list_fields:
 #    print u"\t'%s': record_raw[]," % pytils.translit.slugify(l)
 
-for l in list_fields:
-    print "<dt>%s: </dt><dd>{{ item['%s'] }}</dd>" % (l, pytils.translit.slugify(l))
+#for l in list_fields:
+#    print "<dt>%s: </dt><dd>{{ item['%s'] }}</dd>" % (l, pytils.translit.slugify(l))
+
+#for i in range(0, len(list_fields)):
+#    print "worksheet.write(0, %d, u'%s')" % (i-2, list_fields[i])
+
+for i in range(0, len(list_fields)):
+    print "worksheet.write(i + 1, %d, list_[i]['%s'])" % (i-2, pytils.translit.slugify(list_fields[i]))

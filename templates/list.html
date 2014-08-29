@@ -12,7 +12,7 @@
                         <tr>
                             <th width="20"></th>
                             <th>Наименование</th>
-                            <th>Регоион{%- if filters['region'] %}&nbsp;:&nbsp;<u>{{ filters['region'] }}</u>{% endif %}</th>
+                            <th>Регион{%- if filters['region'] %}&nbsp;:&nbsp;<u>{{ filters['region'] }}</u>{% endif %}</th>
                             <th>Юридический Адрес</th>
                             <th>Телефон</th>
                             <th>Отрасль{%- if filters['otrasl'] %}&nbsp;:&nbsp;<u>{{ filters['otrasl'] }}</u>{% endif %}</th>
@@ -43,6 +43,7 @@
         <div class="row m-t-sm text-center-xs">
             <div class="col-sm-3">
                 <a data-toggle="modal" href="#filter_btn" class="btn btn-sm"><i class='fa fa-filter'></i> Фильтровать</a>
+                <a data-toggle="modal" href="#export_btn" class="btn btn-sm"><i class='fa fa-download'></i> Экспортировать</a>
             </div>
             <div class="col-sm-6">
                 <ul class="pagination pagination-sm m-t-none m-b-none"  style='width: 100%;'>
@@ -81,6 +82,36 @@
                 <button type='submit' class="btn btn-sm btn-primary"><i class='fa fa-filter'></i> Фильтровать</a>
                 <button type="button" class="btn btn-default btn-sm" data-dismiss="modal"><i class='fa fa-times'></i> Закрыть</button>
             </div>
+        </form>
+    {% endcall %}
+    
+    {% call dialog('Экспортировать', 'export_btn') %}
+        <form method='POST' action='/export'>
+            <div class="modal-body">
+                <p>Всего будет экспортировано <b>{{ count_all }}</b> записей порциями не более 1000 записей в каждом файле.</p>
+                <div class="form-group">
+                    <label>Отрасль</label>
+                    <input type='text' class="form-control" name='otrasl' value='{{ filters['otrasl'] }}' placeholder='все отрасли' />
+                </div>
+                <div class="form-group">
+                    <label>ОКВЭД</label>
+                    <input type='text' class="form-control" name='okved' value='{{ filters['okved'] }}' placeholder='все коды ОКВЭД' />
+                </div>
+                <div class="form-group">
+                    <label>Регион</label>
+                    <input type='text' class="form-control" name='region' value='{{ filters['region'] }}' placeholder='все регионы' />
+                </div>
+                <div class="form-group">
+                    <label>На какой email отправить базу?</label>
+                    <input type='text' class="form-control" name='email' placeholder='введите email'/>
+                </div>
+                <p>Формирование базы происходит не слишком быстро, поэтому результирующий файл придёт на указанный email.</p>
+            </div>
+            <div class="modal-footer">
+                <button type='submit' class="btn btn-sm btn-primary"><i class='fa fa-download'></i> Загрузить</a>
+                <button type="button" class="btn btn-default btn-sm" data-dismiss="modal"><i class='fa fa-times'></i> Закрыть</button>
+            </div>
+            {{ xsrf_form_html()|safe }}
         </form>
     {% endcall %}
 {% endblock %}
