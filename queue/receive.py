@@ -5,7 +5,7 @@ import json
 import logging
 import sys
 import smtplib, os
-sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
+sys.path.append('/var/www/ann/data/oblachko')
 from email.MIMEMultipart import MIMEMultipart
 from email.MIMEBase import MIMEBase
 from email.MIMEText import MIMEText
@@ -59,7 +59,7 @@ def get_list_for_export(filter_dict, page):
     return items
 
 def export_list_to_excel(list_, filename_base, page):
-    filename = 'media/%s_%d.xlsx' % (filename_base, page)
+    filename = '/var/www/ann/data/oblachko/media/%s_%d.xlsx' % (filename_base, page)
     workbook = xlsxwriter.Workbook(filename)
     worksheet = workbook.add_worksheet()
     bold = workbook.add_format({'bold': True})
