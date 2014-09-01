@@ -3,18 +3,19 @@
 {% from 'macros.html' import render_pagination, dialog %}
 
 {% block content %}
-    <section class="scrollable wrapper w-f">
-       
+    <section class="scrollable wrapper w-f">       
         <section class="panel">
             <div class="table-responsive">
                 <table class="table table-striped m-b-none">
                     <thead>
                         <tr>
                             <th width="20"></th>
-                            <th>Наименование</th>
+                            <th>Краткое Наименование</th>
+			    <th>Полное Наименование</th>
                             <th>Регион{%- if filters['region'] %}&nbsp;:&nbsp;<u>{{ filters['region'] }}</u>{% endif %}</th>
                             <th>Юридический Адрес</th>
                             <th>Телефон</th>
+			    <th>E-mail</th>
                             <th>Отрасль{%- if filters['otrasl'] %}&nbsp;:&nbsp;<u>{{ filters['otrasl'] }}</u>{% endif %}</th>
                             <th>ОKВЭД{%- if filters['okved'] %}&nbsp;:&nbsp;<u>{{ filters['okved'] }}</u>{% endif %}</th>
                             <th width="20"></th>
@@ -24,10 +25,12 @@
                         {% for i in items %}
                             <tr>
                                 <td><a href="/details/{{ i._id }}" ><i class="fa fa-search-plus"></i></a></td>
-                                <td>{{ i['kratkoe-naimenovanie'] }}</td>
+                                <td><a href="/details/{{ i._id }}" >{{ i['kratkoe-naimenovanie'] }}</a></td>
+				<td><a href="/details/{{ i._id }}" >{{ i['polnoe-naimenovanie'] }}</a></td>
                                 <td>{{ i['region'] }}</td>
                                 <td>{{ i['yuridicheskij-adres'] }}</td>
                                 <td>{{ i['telefon'] }}</td>
+				<td>{{ i['e-mail'] }}</td>
                                 <td>{{ i['otrasl'] }}</td>
                                 <td>{{ i['okved'] }}</td>
                                 <td><a href="/details/{{ i._id }}" ><i class="fa fa-search-plus"></i></a></td>
@@ -88,7 +91,7 @@
     {% call dialog('Экспортировать', 'export_btn') %}
         <form method='POST' action='/export'>
             <div class="modal-body">
-                <p>Всего будет экспортировано <b>{{ count_all }}</b> записей порциями не более 1000 записей в каждом файле.</p>
+                <p>Всего будет экспортировано <b>{{ count_all }}</b> записей порциями не более 10 000 записей в каждом файле.</p>
                 <div class="form-group">
                     <label>Отрасль</label>
                     <input type='text' class="form-control" name='otrasl' value='{{ filters['otrasl'] }}' placeholder='все отрасли' />

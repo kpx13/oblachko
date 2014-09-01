@@ -64,7 +64,7 @@ class ListHandler(BaseHandler):
         self.filter_dict.update(get_filter_request('papka', self.filters['region']))
 
         self.context.update({'title': u'Все записи в базе данных',
-                             'req_time': (time.time() - start_time) * 100000,
+                             'req_time': (time.time() - start_time) * 1000000,
                              'filters': self.filters})
 
         self.context.update(filter_list(RecordDB, self.page, self.filter_dict))

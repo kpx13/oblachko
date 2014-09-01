@@ -30,5 +30,5 @@ class RecordDB(BaseDocument):
         'kpp': unicode,
 
     }
-
+    
     pass

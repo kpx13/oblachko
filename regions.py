@@ -34,14 +34,7 @@ for dirname, dirnames, filenames in os.walk(REGIONS_FOLDER):
             for tr in soup.findAll('tr', attrs={'class' : 'ReportRow'}):
 		try:
                     record_raw = [td.string for td in tr.findAll('td')]
-		except:
-		    print u'Ошибка в файле %s.' % u'/'.join([folder_name, file_name])
-		    if not os.path.exists(u'/'.join([ERRORS_FOLDER, folder_name])):
-    			os.makedirs(u'/'.join([ERRORS_FOLDER, folder_name]))
-		    os.rename(u'/'.join([REGIONS_FOLDER, folder_name, file_name]), u'/'.join([ERRORS_FOLDER, folder_name, file_name]))
-		    can_remove = False
-		    break
-                data = {
+                    data = {
                     'papka': folder_name,
                     'fajl': file_name,
                     'naimenovanie': record_raw[0],
@@ -63,9 +56,15 @@ for dirname, dirnames, filenames in os.walk(REGIONS_FOLDER):
                     'inn': record_raw[23],
                     'ogrn': record_raw[24],
                     'kpp': record_raw[25],
-                }
-                #print '\t', data['kratkoe-naimenovanie'], u'...ok'
-                RecordDB.create_from_data(data)
+                    }
+                    RecordDB.create_from_data(data)
+		except:
+                    print u'Ошибка в файле %s.' % u'/'.join([folder_name, file_name])
+                    if not os.path.exists(u'/'.join([ERRORS_FOLDER, folder_name])):
+                        os.makedirs(u'/'.join([ERRORS_FOLDER, folder_name]))
+                    os.rename(u'/'.join([REGIONS_FOLDER, folder_name, file_name]), u'/'.join([ERRORS_FOLDER, folder_name, file_name]))
+                    can_remove = False
+                    break
 	    if can_remove:
 	        os.remove('/'.join([REGIONS_FOLDER, folder_name, file_name]))
 	        print 'ok'

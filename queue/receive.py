@@ -50,7 +50,7 @@ def send_mail_with_attach(email, subject, text, files=[]):
     s.close()
 
 
-PER_FILE = 1000
+PER_FILE = 10000
 
 def get_list_for_export(filter_dict, page):
     "Возращает отпагинированный список для модели db_model и страницы page_num"
@@ -113,7 +113,7 @@ def send_export(filter_dict, email):
     count_all = RecordDB.get_count(filter_dict)
     pages_all = count_all / PER_FILE + 1
     filenames = []
-    filename_base = 'base_' + datetime.now().strftime('%d.%m.%Y _%H:%M')
+    filename_base = 'base_' + datetime.now().strftime('%d.%m.%Y_%H:%M')
     for p in range(0, pages_all):
         filenames.append(export_list_to_excel(get_list_for_export(filter_dict, p), filename_base, p))
 
